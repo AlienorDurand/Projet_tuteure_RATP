@@ -1,12 +1,7 @@
 <?php
-    include_once "header.php" 
+    include_once "header.php" ;
 ?>
-
-
-
-
-<img src="./img/plan.png"> 
-
+    <a href="./index.php?ctrl=membre&action=info">
 <?php
-    include_once "header.php" 
+    include_once "header.php" ;
 ?>

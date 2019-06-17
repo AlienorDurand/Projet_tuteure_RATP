@@ -69,6 +69,25 @@ class membreController {
 	   }
        }
     }
+    
+    public function infoPerso(){
+        $nom = ;
+        $prenom = ;
+        $email = ;
+        $adresse = ;
+        $ville = ;
+        $dateNaissance = ;
+        $telephone = ;
+        $lignePref = ;
+        $lignePref2 = ;
+        $statisfait = ;
+        $stationPref = ;
+        require('./View/info.php');
+    }
+    
+    public function updateInfoPerso(){
+        
+    }
 
 
     
