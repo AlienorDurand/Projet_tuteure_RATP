@@ -5,7 +5,7 @@
         <section class="col-md-12">
           <div class="row">
             <article class="col-md-12">
-                <p align='center'>Bienvenu sur la page d'accueil </p>
+                <p align='center'> Lol haha à modifier uwu  </p>
             </article>
           </div>
         </section>
