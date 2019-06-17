@@ -5,7 +5,7 @@
     
     <h2 class="titre"> INSCRIPTION </h2> <br />
     
-    <form action="inscription.php" method="post">
+    <form action="index.php?ctrl=membre&action=doInscription" method="post">
         
         <input class="entree" type="text" name="nom" placeholder="Nom" required value="<?php if (isset($_POST['nom'])) echo htmlentities(trim($_POST['nom'])); ?>"><br />
         

@@ -6,13 +6,13 @@
         
     <h2 class="titre"> CONNEXION </h2> <br/> 
         
-        <form action="index.php" method="post">
+        <form action="index.php?ctrl=membre&action=doLogin" method="post">
             
             <input class="entree" type="text" name="mail" placeholder="Email" required value="<?php if (isset($_POST['mail'])) echo htmlentities(trim($_POST['mail'])); ?>"><br />
             
             <input class="entree" type="password" name="password" placeholder="Mot de passe" required value="<?php if (isset($_POST['password'])) echo htmlentities(trim($_POST['mail'])); ?>"><br />
             
-            <input class="boutton2" type="button" name="connexion" value="GO !">
+            <input class="boutton2" type="submit" name="connexion" value="Connexion">
             
             </form>
             

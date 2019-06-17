@@ -31,3 +31,18 @@
   color: white ;
   opacity: 0.66 ; 
 }
+
+.boutton3{
+    background: #2E296A;
+    border: 1px solid #2E296A;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: white ; 
+    font-family: Roboto;
+    padding: 2% ; 
+    padding-left: 4% ; 
+    padding-right: 4% ; 
+    margin-top: 7% ; 
+    margin-bottom: 7% ; 
+    margin-left: 50% ;  
+}
