@@ -2,14 +2,22 @@
     include_once "header.php" 
 ?>
 
-    
-        Connexion au compte utilisateur :<br />
+    <div class="formulaire">
+        
+    <h2 class="titre"> CONNEXION </h2> <br/> 
+        
         <form action="index.php" method="post">
-            Mail : <input type="text" name="mail" value="<?php if (isset($_POST['mail'])) echo htmlentities(trim($_POST['mail'])); ?>"><br />
-Mot de passe : <input type="password" name="password" value="<?php if (isset($_POST['password'])) echo htmlentities(trim($_POST['mail'])); ?>"><br />
-<input type="submit" name="connexion" value="Connexion">
-</form>
-<a href="./index.php?ctrl=membre&action=inscription">Vous inscrire</a>
+            
+            <input class="entree" type="text" name="mail" placeholder="Email" required value="<?php if (isset($_POST['mail'])) echo htmlentities(trim($_POST['mail'])); ?>"><br />
+            
+            <input class="entree" type="password" name="password" placeholder="Mot de passe" required value="<?php if (isset($_POST['password'])) echo htmlentities(trim($_POST['mail'])); ?>"><br />
+            
+            <input class="boutton2" type="button" name="connexion" value="GO !">
+            
+            </form>
+            
+            <a class="boutton2" href="./index.php?ctrl=membre&action=inscription"> Pas encore inscrit ? </a>
+        </div>
 <?php
 if(isset($erreur)) echo '<br /><br />',$erreur;
 ?>
