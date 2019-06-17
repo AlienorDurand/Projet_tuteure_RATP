@@ -7,6 +7,8 @@
         <link href="Style/login.css" rel="stylesheet" type="text/css"/>
 
         
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    
         <link rel="icon" href="img/favicon.png"/>
         <script src="javascript/burger.js"></script>
         
@@ -47,11 +49,11 @@
                         </div> 
 
                         <div class="col-4"> 
-                            <a href=""><img src="img/LOGO-blanc.png" width="111" height="39"></a>
+                            <a href="./index.php?ctrl=default&action=defaultPage"><img src="img/LOGO-blanc.png" width="111" height="39"></a>
                         </div>
 
                         <div class="col-4"> 
-                            <a href="" ><img src="img/contact.svg" width="36" height="36"></a>
+                            <a href="./index.php?ctrl=membre&action=login" ><img src="img/contact.svg" width="36" height="36"></a>
                         </div>
 
                     </div>

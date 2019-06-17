@@ -22,6 +22,18 @@ class Connexion {
     function getDb() {
         return $this->db;
     }
+    
+    function getMembre($mail,$password){
+        $sql = $this->db->prepare('SELECT count(*) FROM membre WHERE mail= ? AND password=?');
+		$sql->execute(array($mail,md5($password)));
+        return $sql->fetch();
+    }
+    
+    function insertMembre($nom,$prenom,$mail,$password){
+        $sql = $this->db->prepare('INSERT INTO membre(nom,prenom,mail,password) VALUES(?,?,?,?)');
+        $sql->execute(array($nom,$prenom,$mail,md5($password)));        
+    }
+
 
 
 }
