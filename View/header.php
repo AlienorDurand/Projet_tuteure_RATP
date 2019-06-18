@@ -1,11 +1,16 @@
-<head>
+<!DOCTYPE html>
+<head lang="fr">
         <title> NAVI.go </title>
         <meta charset="utf-8"/> 
         <link href="Style/ratp.css" rel="stylesheet" type="text/css"/>
         <link href="Style/menu.css" rel="stylesheet" type="text/css"/>
         <link href="Style/accueil.css" rel="stylesheet" type="text/css"/>
+        <link href="Style/login.css" rel="stylesheet" type="text/css"/>
+        <link href="Style/twitter.css" rel="stylesheet" type="text/css"/>
 
         
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    
         <link rel="icon" href="img/favicon.png"/>
         <script src="javascript/burger.js"></script>
         
@@ -35,22 +40,23 @@
                                 <ul id="menu">
                                     <a href="./index.php?ctrl=default&action=defaultPage"><li>Accueil</li></a>
                                     <a href="#"><li>Recherche</li></a>
-                                    <a href="#"><li>Twitter</li></a>
+                                    <a href="./index.php?ctrl=twitter&action=afficheTwitter"><li>Twitter</li></a>
                                     <a href="#"><li>Info trafic</li></a>
                                     <a href="#"><li>Plan hors ligne</li></a>
                                     <a href="#"><li>Statistiques</li></a>
-                                    <a href="./index.php?ctrl=membre&action=login"><li>Mon compte</li></a>
+                                    <?php if($_SESSION['mail']){?><a href="./index.php?ctrl=membre&action=pageAccueilMembre"><li>Mon compte</li></a><?php }else{?><a href="./index.php?ctrl=membre&action=login"><li>Mon compte</li></a><?php } ?>
                                 </ul>
                               </div>
                             </nav>
                         </div> 
 
                         <div class="col-4"> 
-                            <a href=""><img src="img/LOGO-blanc.png" width="111" height="39"></a>
+                            <a href="./index.php?ctrl=default&action=defaultPage"><img src="img/LOGO-blanc.png" width="111" height="39"></a>
                         </div>
 
                         <div class="col-4"> 
-                            <a href="" ><img src="img/contact.svg" width="36" height="36"></a>
+                            <?php if($_SESSION['mail']){?><a href="./index.php?ctrl=membre&action=pageAccueilMembre"><img src="img/contact.svg" width="36" height="36"></a><?php }else{?><a href="./index.php?ctrl=membre&action=login"><img src="img/contact.svg" width="36" height="36">+</a><?php } ?>
+                            
                         </div>
 
                     </div>
