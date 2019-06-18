@@ -70,25 +70,86 @@ class membreController {
        }
     }
     
+    public function pageAccueilMembre(){
+        require('./View/membre.php');
+    }
+    
     public function infoPerso(){
-        $nom = ;
-        $prenom = ;
-        $email = ;
-        $adresse = ;
-        $ville = ;
-        $dateNaissance = ;
-        $telephone = ;
-        $lignePref = ;
-        $lignePref2 = ;
-        $statisfait = ;
-        $stationPref = ;
+
+        $membre = new Connexion();
+        $nom = $membre->getNom($_SESSION['mail']);
+        $_SESSION['nom'] = $nom['nom'];
+        $prenom = $membre->getPrenom($_SESSION['mail']);
+        $_SESSION['prenom'] = $prenom['prenom'];
+        $adresse =  $membre->getAdresse($_SESSION['mail']);
+        $_SESSION['adresse'] = $adresse['adresse'];
+        $ville = $membre->getVille($_SESSION['mail']);
+        $_SESSION['ville'] = $ville['ville'];
+        $dateNaissance = $membre->getDateNais($_SESSION['mail']);
+        $_SESSION['dateNaissance'] = $dateNaissance['dateNaissance'];
+        $telephone = $membre->getTel($_SESSION['mail']);
+        $_SESSION['telephone'] = $telephone['telephone'];
+        $lignePref = $membre->getLignePref($_SESSION['mail']);
+        $_SESSION['lignePref'] = $lignePref['lignePref'];
+        $stationPref = $membre->getStationPref($_SESSION['mail']);
+        $_SESSION['stationPref'] = $stationPref['stationPref'];
+        $satisfait = $membre->getSatisfait($_SESSION['mail']);
+        $_SESSION['satisfait'] = $satisfait['satisfait'];
+        $stationPref2 = $membre->getStationPref2($_SESSION['mail']);
+        $_SESSION['stationPref2'] = $stationPref2['stationPref2'];
+        
         require('./View/info.php');
     }
     
     public function updateInfoPerso(){
         
+        require('./View/modifMembre.php');
     }
-
+    
+    public function sauvInforPerso(){
+        
+        $membre2 = new Connexion();
+        $membre2->update($_POST['nom'],$_POST['prenom'],$_POST['adresse'],$_POST['ville'],$_POST['dateNaissance'],$_POST['telephone'],$_POST['lignePreferee'],$_POST['stationPreferee'],$_POST['satisfait'],$_POST['stationPreferee2'],$_SESSION['mail']);
+        
+        $membre = new Connexion();
+        
+        $nom = $membre->getNom($_SESSION['mail']);
+        $_SESSION['nom'] = $nom['nom'];
+        
+        $prenom = $membre->getPrenom($_SESSION['mail']);
+        $_SESSION['prenom'] = $prenom['prenom'];
+                
+        $adresse =  $membre->getAdresse($_SESSION['mail']);
+        $_SESSION['adresse'] = $adresse['adresse'];
+        
+        $ville = $membre->getVille($_SESSION['mail']);
+        $_SESSION['ville'] = $ville['ville'];      
+        
+        $dateNaissance = $membre->getDateNais($_SESSION['mail']);
+        $_SESSION['dateNaissance'] = $dateNaissance['dateNaissance'];     
+        
+        $telephone = $membre->getTel($_SESSION['mail']);
+        $_SESSION['telephone'] = $telephone['telephone'];      
+        
+        $lignePref = $membre->getLignePref($_SESSION['mail']);
+        $_SESSION['lignePref'] = $lignePref['lignePref'];
+        
+        $stationPref = $membre->getStationPref($_SESSION['mail']);
+        $_SESSION['stationPref'] = $stationPref['stationPref'];
+        
+        $satisfait = $membre->getSatisfait($_SESSION['mail']);
+        $_SESSION['satisfait'] = $satisfait['satisfait'];
+        
+        $stationPref2 = $membre->getStationPref2($_SESSION['mail']);
+        $_SESSION['stationPref2'] = $stationPref2['stationPref2'];
+        
+        require('./View/info.php');
+    }
+    
+    public function deconnexion(){
+        session_unset();
+        require('./View/default.php'); 
+    }
 
     
     

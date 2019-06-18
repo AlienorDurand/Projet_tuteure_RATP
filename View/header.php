@@ -42,7 +42,7 @@
                                     <a href="#"><li>Info trafic</li></a>
                                     <a href="#"><li>Plan hors ligne</li></a>
                                     <a href="#"><li>Statistiques</li></a>
-                                    <a href="./index.php?ctrl=membre&action=login"><li>Mon compte</li></a>
+                                    <?php if($_SESSION['mail']){?><a href="./index.php?ctrl=membre&action=pageAccueilMembre"><li>Mon compte</li></a><?php }else{?><a href="./index.php?ctrl=membre&action=login"><li>Mon compte</li></a><?php } ?>
                                 </ul>
                               </div>
                             </nav>
@@ -53,7 +53,8 @@
                         </div>
 
                         <div class="col-4"> 
-                            <a href="./index.php?ctrl=membre&action=login" ><img src="img/contact.svg" width="36" height="36"></a>
+                            <?php if($_SESSION['mail']){?><a href="./index.php?ctrl=membre&action=pageAccueilMembre"><img src="img/contact.svg" width="36" height="36"></a><?php }else{?><a href="./index.php?ctrl=membre&action=login"><img src="img/contact.svg" width="36" height="36">+</a><?php } ?>
+                            
                         </div>
 
                     </div>
