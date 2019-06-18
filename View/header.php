@@ -1,4 +1,5 @@
-<head>
+<!DOCTYPE html>
+<head lang="fr">
         <title> NAVI.go </title>
         <meta charset="utf-8"/> 
         <link href="Style/ratp.css" rel="stylesheet" type="text/css"/>
