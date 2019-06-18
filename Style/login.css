@@ -67,7 +67,7 @@
 
 .forminfo{
     width: 300px;
-    height: 35px;
+    height: 45px;
     background: #FFFFFF;
     border: 1px solid #2E296A;
     box-sizing: border-box;
@@ -76,11 +76,58 @@
     padding: 1.5% ;  
     margin-right: 5% ; 
     margin-left: 3% ; 
+    vertical-align: middle ; 
 }
 
-#infocompte .col-4{
-    opacity : 0.5 ; 
-    width: 100px ;  ; 
+#infocompte  .col-4{
     font-size: 10pt ; 
+    opacity : 0.5 ; 
+    float: left ; 
+}
+
+#modifinfocompte{
+    color: #2E296A ; 
+    margin : 6% ; 
+}
+
+.formmodifinfo{
+    width: 350px;
+    height: 40px;
+    margin-top: -15px ; 
+    vertical-align: middle ; 
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 1.5% ;  
+    margin-right: 5% ; 
+    margin-left: 3% ; 
+    color: #2E296A ; 
+}
+
+#modifinfocompte .col-4{
+    width: 300px ; 
+    float: left ;
+    opacity : 0.5 ; 
+}
+
+#modifinfocompte input[type="text"] {
+    background: #FFFFFF;
+    border: 1px solid #2E296A;
+    box-sizing: border-box;
+    border-radius: 5px; 
+    padding: 1.5% ; 
+    color: #2E296A ; 
+}
+
+#bouttonmodif{
+    background: #2E296A;
+    border: 1px solid;
+    box-sizing: border-box;
+    border-radius: 5px; 
+    padding: 2% ;
+    padding-left: 4% ;  
+    padding-right: 4% ;
+    color: white ; 
+    float: right ; 
+    opacity: 1 ; 
 }
 
