@@ -5,6 +5,7 @@
         <link href="Style/menu.css" rel="stylesheet" type="text/css"/>
         <link href="Style/accueil.css" rel="stylesheet" type="text/css"/>
         <link href="Style/login.css" rel="stylesheet" type="text/css"/>
+        <link href="Style/twitter.css" rel="stylesheet" type="text/css"/>
 
         
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
@@ -38,7 +39,7 @@
                                 <ul id="menu">
                                     <a href="./index.php?ctrl=default&action=defaultPage"><li>Accueil</li></a>
                                     <a href="#"><li>Recherche</li></a>
-                                    <a href="#"><li>Twitter</li></a>
+                                    <a href="./index.php?ctrl=twitter&action=afficheTwitter"><li>Twitter</li></a>
                                     <a href="#"><li>Info trafic</li></a>
                                     <a href="#"><li>Plan hors ligne</li></a>
                                     <a href="#"><li>Statistiques</li></a>
