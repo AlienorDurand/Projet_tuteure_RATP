@@ -16,7 +16,7 @@ class Connexion {
         try {
             $this->db = new PDO('mysql:host=localhost;dbname=ptut', $this->username, $this->password);
         } catch (Exception $ex) {
-            echo "Problème de connexion" . $ex->getMessage();
+            echo "<script>alert(\"Problème de connexion\")</script> " . $ex->getMessage();
         }
     }
     function getDb() {
