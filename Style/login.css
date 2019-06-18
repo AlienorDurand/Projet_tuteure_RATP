@@ -54,3 +54,33 @@
 .erreurs {
     color: red ; 
 }
+
+
+#infocompte{
+    background-color: white;
+    height: 100% ; 
+    color: #2E296A ; 
+    text-align: left ; 
+    font-family: 'Roboto';
+    margin: 5% ; 
+}
+
+.forminfo{
+    width: 300px;
+    height: 35px;
+    background: #FFFFFF;
+    border: 1px solid #2E296A;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-bottom: -3% ; 
+    padding: 1.5% ;  
+    margin-right: 5% ; 
+    margin-left: 3% ; 
+}
+
+#infocompte .col-4{
+    opacity : 0.5 ; 
+    width: 100px ;  ; 
+    font-size: 10pt ; 
+}
+

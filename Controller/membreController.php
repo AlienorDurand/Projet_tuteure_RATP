@@ -71,7 +71,7 @@ class membreController {
     }
     
     public function pageAccueilMembre(){
-        require('./View/membre.php');
+        require('./View/info.php');
     }
     
     public function infoPerso(){
