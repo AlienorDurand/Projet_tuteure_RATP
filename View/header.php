@@ -12,7 +12,7 @@
         <link rel="icon" href="img/favicon.png"/>
         <script src="javascript/burger.js"></script>
         
-        <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src='https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js'></script>
         
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -34,7 +34,6 @@
         <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
         <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.4/dist/cdn/placesAutocompleteDataset.min.js"></script>
-
 
 
     </head>
