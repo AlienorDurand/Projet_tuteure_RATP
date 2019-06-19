@@ -121,5 +121,21 @@ class Connexion {
         $sql->execute(array($mail));
         return $sql->fetch();
     }
-
+    function getNbTrajetsEffectues($mail){
+        $sql = $this->db->prepare('SELECT COUNT(*) FROM trajet t,membre m WHERE m.id=t.idMembre and m.mail=?');
+        $sql->execute(array($mail));
+        return $sql->fetch();
+    }
+    function getNbTrajetsStation1($mail){
+        $sql = $this->db->prepare('SELECT COUNT(*) FROM trajet t,membre m WHERE m.id=t.idMembre and m.stationPreferee=t.stationDépart or m.stationPreferee=t.stationArrivée and m.mail =?');
+        $sql->execute(array($mail));
+        return $sql->fetch();
+    }
+    function getNbTrajetsStation2($mail){
+        $sql = $this->db->prepare('SELECT COUNT(*) FROM trajet t,membre m WHERE m.id=t.idMembre and m.stationPreferee2=t.stationDépart or m.stationPreferee2=t.stationArrivée and m.mail =?');
+        $sql->execute(array($mail));
+        return $sql->fetch();
+    }
 }
+
+
