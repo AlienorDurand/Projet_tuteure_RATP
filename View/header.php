@@ -2,12 +2,12 @@
 <head lang="fr">
         <title> NAVI.go </title>
         <meta charset="utf-8"/> 
-        <link href="Style/ratp.css" rel="stylesheet" type="text/css"/>
         <link href="Style/menu.css" rel="stylesheet" type="text/css"/>
         <link href="Style/accueil.css" rel="stylesheet" type="text/css"/>
         <link href="Style/login.css" rel="stylesheet" type="text/css"/>
         <link href="Style/twitter.css" rel="stylesheet" type="text/css"/>
 
+        <link href="Style/ratp.css" rel="stylesheet" type="text/css"/>
         
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     
@@ -77,6 +77,7 @@
                                     <a href="#"><li>Plan hors ligne</li></a>
                                     <a href="#"><li>Statistiques</li></a>
                                     <?php if($_SESSION['mail']){?><a href="./index.php?ctrl=membre&action=pageAccueilMembre"><li>Mon compte</li></a><?php }else{?><a href="./index.php?ctrl=membre&action=login"><li>Mon compte</li></a><?php } ?>
+                                    <a href="./index.php?ctrl=membre&action=deconnexion"><li>Déconnexion</li></a>
                                 </ul>
                               </div>
                             </nav>
@@ -87,7 +88,7 @@
                         </div>
 
                         <div class="col-4"> 
-                            <?php if($_SESSION['mail']){?><a href="./index.php?ctrl=membre&action=pageAccueilMembre"><img src="img/contact.svg" width="36" height="36"></a><?php }else{?><a href="./index.php?ctrl=membre&action=login"><img src="img/contact.svg" width="36" height="36">+</a><?php } ?>
+                            <?php if($_SESSION['mail']){?><a href="./index.php?ctrl=membre&action=pageAccueilMembre"><img src="img/contact.svg" width="36" height="36"></a><?php }else{?><a href="./index.php?ctrl=membre&action=login"><img src="img/contact.svg" width="36" height="36"></a><?php } ?>
                             
                         </div>
 
