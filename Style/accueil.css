@@ -9,6 +9,10 @@
     height: 213px;
 } */
 
+#map {
+    z-index: 0;
+}
+
 #partieaccueil form{
     text-align: center ; 
 }
