@@ -8,32 +8,30 @@
             <!-- <img src="./img/plan.png"> -->
             <div id="map" style="width: 100%; height: 40vh;"></div>
             
-            <form action="recherche.php" method="post">
+            <form action="index.php?ctrl=recherche&action=recherchePage" method="post">
                 <input class="recherche" type="search" name="depart" placeholder="Départ" id="input_depart" value="" required><br />
                 
                 <input class="recherche" type="search" name="arrivee" placeholder="Arrivée" id="input_arrivee" value="" required><br />
                 
                 <input class="boutton3" type="submit" name="connexion" value="GO !">
-                    
-        
-                
             </form>
         </div>
       </div>    
 
 <?php
-    include_once "header.php" 
+    include_once "footer.php" 
 ?>
 
 <script>
+// SECTION MAP
+////////////////
+
     window.onload = getPosMap;
     var mymap = null;
     var latPos, lngPos = null;
     var input_depart = document.getElementById('input_depart');
     var input_arrivee = document.getElementById('input_arrivee');
 
-// SECTION MAP
-////////////////
 
     // Initialise la Map
     mymap = L.map('map').setView([48.8534, 2.3488], 11);
@@ -56,7 +54,6 @@
 
     // Met la Map sur la position 
     function succesMap(pos){
-        console.log(pos.coords);
         latPos = pos.coords.latitude;
         lngPos = pos.coords.longitude;
         mymap.setView([latPos, lngPos], 15);
@@ -112,7 +109,7 @@
         }
     }
 
-    // all the places.js options are available
+    // Initialisation de l'objet d'autocomplétion des lieux
     var placesDataset = placesAutocompleteDataset({
         appId: "plZ6ZC3CU96B",
         apiKey: "c87e3c4fbfc80ea56598fe67a55f8701",
@@ -122,11 +119,11 @@
             suggestion: function(suggestion) {
                 let type = "";
                 if (suggestion.type === "trainStation") {
-                    // A modifier par un icône
+                    // A modifier par un icône !
                     type = "<i>TchouTchou ! </i>";
                 }
                 if (suggestion.type === "city" || suggestion.type === "address") {
-                    // A modifier par un icône
+                    // A modifier par un icône !
                     type = "<i>City !</i>";
                 }
                 return type + " " + suggestion.value;
@@ -139,6 +136,7 @@
         hitsPerPage: 3
     });
 
+    // Initialisation de l'objet d'autocomplétion de la Position
     var coordoDataset = {
         source: autocomplete.sources.hits(index, { hitsPerPage: 1 }),
         displayKey: "name",
@@ -151,7 +149,7 @@
         }
     };
 
-    // init
+    // Concaténation des deux
     var autocompleteDepart = autocomplete(
         input_depart,
         {
@@ -180,6 +178,7 @@
 
     var autocompleteChangeEvents = ["selected", "autocompleted"];
 
+    // Comportements selon certains évènements
     autocompleteChangeEvents.forEach(function(eventName) {
         autocompleteDepart.on("autocomplete:" + eventName, function(
         event,
@@ -263,7 +262,7 @@
         }
     }
 
-    // 
+    // Récupère la position
 
     function getPos(e) {
         if (navigator.geolocation) {
