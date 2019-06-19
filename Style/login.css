@@ -1,4 +1,5 @@
 .formulaire{
+    top: 59px ; 
     background-color: #2E296A;
     height: 100% ; 
     color: white ; 
@@ -63,6 +64,8 @@
     text-align: left ; 
     font-family: 'Roboto';
     margin: 5% ; 
+
+    margin-top: 70px;
 }
 
 .forminfo{
@@ -88,6 +91,8 @@
 #modifinfocompte{
     color: #2E296A ; 
     margin : 6% ; 
+    top: 59px ;
+    margin-top: 75px ; 
 }
 
 .formmodifinfo{
