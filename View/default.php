@@ -56,6 +56,7 @@
 
     // Met la Map sur la position 
     function succesMap(pos){
+        console.log(pos.coords);
         latPos = pos.coords.latitude;
         lngPos = pos.coords.longitude;
         mymap.setView([latPos, lngPos], 15);
@@ -85,7 +86,8 @@
     var lngTo = null;
     var lngFrom = null;
     var fromTo = "";
-    var boolPos = true;
+    var boolPosD = false;
+    var boolPosA = false;
 
     input_depart.addEventListener('change', change);
     input_depart.addEventListener('blur', change);
@@ -94,10 +96,19 @@
 
     // Pour fixer l'effacement du champs, on ne sait pas pourquoi ...
     function change(e){
-        if (boolPos == true){
-            setTimeout(() => {
-                e.target.value = "Ma Position";
-            }, 500);
+        if(e.target.id == 'input_depart'){
+            if (boolPosD == true){
+                setTimeout(() => {
+                    e.target.value = "Ma Position";
+                }, 100);
+            }
+        }
+        if(e.target.id == 'input_arrivee'){
+            if (boolPosA == true){
+                setTimeout(() => {
+                    e.target.value = "Ma Position";
+                }, 100);
+            }            
         }
     }
 
@@ -125,7 +136,7 @@
         countries: ["fr"],
         useDeviceLocation: true,
         aroundRadius: 70000,
-        hitsPerPage: 5
+        hitsPerPage: 3
     });
 
     var coordoDataset = {
@@ -176,12 +187,12 @@
         datasetName
         ) {
             if (datasetName === "coords") {
-                boolPos = true;
+                boolPosD = true;
                 fromTo = "from";
                 getPos(event);
             }
             if (datasetName === "places") {
-                boolPos = false;
+                boolPosD = false;
                 search("from", suggestion.latlng);
             }
         });
@@ -192,12 +203,12 @@
         datasetName
         ) {
             if (datasetName === "coords") {
-                boolPos = true;
+                boolPosA = true;
                 fromTo = "to";
                 getPos(event);
             }
             if (datasetName === "places") {
-                boolPos = false;
+                boolPosA = false;
                 search("to", suggestion.latlng);
             }
         });
