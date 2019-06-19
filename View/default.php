@@ -8,11 +8,9 @@
             <!-- <img src="./img/plan.png"> -->
             <div id="map" style="width: 100%; height: 40vh;"></div>
             
-            <form action="index.php?ctrl=recherche&action=recherchePage" method="post">
+            <form action="index.php?ctrl=recherche&action=recherchePage" method="post" name="myform">
                 <input class="recherche" type="search" name="depart" placeholder="Départ" id="input_depart" value="" required><br />
-                
-                <input class="recherche" type="search" name="arrivee" placeholder="Arrivée" id="input_arrivee" value="" required><br />
-                
+                <input class="recherche" type="search" name="arrivee" placeholder="Arrivée" id="input_arrivee" value="" required><br />                
                 <input class="boutton3" type="submit" name="connexion" value="GO !">
             </form>
         </div>
@@ -21,10 +19,12 @@
 <?php
     include_once "footer.php" 
 ?>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 <script>
 // SECTION MAP
 ////////////////
+    window.onload = ()=>{localStorage.clear();}
 
     window.onload = getPosMap;
     var mymap = null;
@@ -213,55 +213,7 @@
         });
     });
 
-    // Met à jours les valeurs qui seront passées à l'URL
-    function search(where, latlng) {
-        if (where === "to") {
-            latTo = latlng.lat;
-            lngTo = latlng.lng;
-        } else if (where === "from") {
-            latFrom = latlng.lat;
-            lngFrom = latlng.lng;
-        }
-    }
-
-    // Fonction qui appelle l'API Navitia et passe le resultat à la fonction 'draw' 
-    // (A changer pour la passer à une autre page)
-    function clickButton() {
-        if (latTo && latFrom) {
-            var url =
-                "https://api.navitia.io/v1/coverage/fr-idf/journeys?from=" +
-                lngFrom +
-                ";" +
-                latFrom +
-                "&to=" +
-                lngTo +
-                ";" +
-                latTo
-            console.log(url);
-            $.ajax({
-                type: "GET",
-                url: url,
-                dataType: "json",
-                headers: {
-                Authorization: "Basic " + btoa(sandboxToken)
-                },
-                success: draw,
-                error: function(xhr, textStatus, errorThrown) {
-                alert(
-                    'Error when trying to process isochron: "' +
-                    textStatus +
-                    '", "' +
-                    errorThrown +
-                    '"'
-                );
-                }
-            });
-        } else {
-            alert("entrer un depart et une arrivée");
-            console.log(latTo + " " + latFrom);
-        }
-    }
-
+    
     // Récupère la position
 
     function getPos(e) {
@@ -300,6 +252,59 @@
 
     function error(err) {
         console.log(err);
+    }
+
+    // Met à jours les valeurs qui seront passées à l'URL
+    function search(where, latlng) {
+        if (where === "to") {
+            latTo = latlng.lat;
+            lngTo = latlng.lng;
+        } else if (where === "from") {
+            latFrom = latlng.lat;
+            lngFrom = latlng.lng;
+        }
+    }
+
+    function test(){
+        return true;
+    }
+    // Fonction qui appelle l'API Navitia et passe le resultat à la fonction 'draw' 
+    // (A changer pour la passer à une autre page)
+    function clickButton() {
+
+        return new Promise((resolve, reject)=>{
+
+        if (latTo && latFrom) {
+            var url ="https://api.navitia.io/v1/coverage/fr-idf/journeys?from="+lngFrom +";"+latFrom+"&to="+lngTo+";"+latTo
+            console.log(url);
+            $.ajax({
+                type: "GET",
+                url: url,
+                dataType: "json",
+                headers: {
+                    Authorization: "Basic " + btoa(sandboxToken)
+                },
+                success: function(results){
+                    console.log(results);
+                    localStorage.setItem('trajets', JSON.stringify(results.journeys));
+                    console.log(JSON.parse(localStorage.getItem('trajets')));
+                    document.forms.form.submit();
+                },
+                error: function(xhr, textStatus, errorThrown) {
+                    alert(
+                        'Error when trying to process isochron: "' +
+                        textStatus +
+                        '", "' +
+                        errorThrown +
+                        '"'
+                    );
+                }
+            });
+        } else {
+            alert("entrer un depart et une arrivée");
+            console.log(latTo + " " + latFrom);
+        }
+        });
     }
 
     // Affiche les resultats  : a Modifier et a envoyer à une autre page
