@@ -90,13 +90,13 @@ class membreController {
         $telephone = $membre->getTel($_SESSION['mail']);
         $_SESSION['telephone'] = $telephone['telephone'];
         $lignePref = $membre->getLignePref($_SESSION['mail']);
-        $_SESSION['lignePref'] = $lignePref['lignePref'];
+        $_SESSION['lignePreferee'] = $lignePref['lignePreferee'];
         $stationPref = $membre->getStationPref($_SESSION['mail']);
-        $_SESSION['stationPref'] = $stationPref['stationPref'];
+        $_SESSION['stationPreferee'] = $stationPref['stationPreferee'];
         $satisfait = $membre->getSatisfait($_SESSION['mail']);
         $_SESSION['satisfait'] = $satisfait['satisfait'];
         $stationPref2 = $membre->getStationPref2($_SESSION['mail']);
-        $_SESSION['stationPref2'] = $stationPref2['stationPref2'];
+        $_SESSION['stationPreferee2'] = $stationPref2['stationPreferee2'];
         
         require('./View/info.php');
     }
@@ -132,16 +132,18 @@ class membreController {
         $_SESSION['telephone'] = $telephone['telephone'];      
         
         $lignePref = $membre->getLignePref($_SESSION['mail']);
-        $_SESSION['lignePref'] = $lignePref['lignePref'];
+        $_SESSION['lignePreferee'] = $lignePref['lignePreferee'];
         
         $stationPref = $membre->getStationPref($_SESSION['mail']);
-        $_SESSION['stationPref'] = $stationPref['stationPref'];
+        $_SESSION['stationPreferee'] = $stationPref['stationPreferee'];
         
         $satisfait = $membre->getSatisfait($_SESSION['mail']);
         $_SESSION['satisfait'] = $satisfait['satisfait'];
         
         $stationPref2 = $membre->getStationPref2($_SESSION['mail']);
-        $_SESSION['stationPref2'] = $stationPref2['stationPref2'];
+        $_SESSION['stationPreferee2'] = $stationPref2['stationPreferee2'];
+        
+       
         
         require('./View/info.php');
     }
