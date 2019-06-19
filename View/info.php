@@ -1,20 +1,32 @@
 <?php
     include_once "header.php" ;
-        
-        echo 'Nom : '.$_SESSION['nom'].' <a href="./index.php?ctrl=membre&action=updateInfoPerso">Modifier</a><br />';
-        echo 'Prenom : '.$prenom['prenom'].' <a href="./index.php?ctrl=membre&action=updateInfoPerso">Modifier</a><br />';
-        echo 'Adresse : '.$_SESSION['adresse'].' <a href="./index.php?ctrl=membre&action=updateInfoPerso">Modifier</a><br />';
-        echo 'Ville : '.$_SESSION['ville'].' <a href="./index.php?ctrl=membre&action=updateInfoPerso">Modifier</a><br />';
-        echo 'Date Naisannce : '.$_SESSION['dateNaissance'].' <a href="./index.php?ctrl=membre&action=updateInfoPerso">Modifier</a><br />';
-        echo 'Tel : '.$_SESSION['telephone'].' <a href="./index.php?ctrl=membre&action=updateInfoPerso">Modifier</a><br />';
-        echo 'Ligne preferée : '.$_SESSION['lignePref'].' <a href="./index.php?ctrl=membre&action=updateInfoPerso">Modifier</a><br />';
-        echo 'Station preferée : '.$_SESSION['stationPref'].' <a href="./index.php?ctrl=membre&action=updateInfoPerso">Modifier</a><br />';
-        echo 'Station preferée 2 : '.$_SESSION['stationPref2'].' <a href="./index.php?ctrl=membre&action=updateInfoPerso">Modifier</a><br />';
-        echo 'Satisfait : '.$_SESSION['satisfait'].' <a href="./index.php?ctrl=membre&action=updateInfoPerso">Modifier</a><br />';
+?> 
 
+    <div id="infocompte"> 
+        <div class="row"> <div class="forminfo">  <?php echo '<span class="col-4" > Nom </span> <span class="col-8" >  '.$_SESSION['nom'].'</span>' ?> </div>  <a href="./index.php?ctrl=membre&action=updateInfoPerso"> <img width="30px" src="./img/pen.svg"/>  </a> </div>  <br/>
+
+        <div class="row"> <div class="forminfo"> <?php echo '<span class="col-4"> Prénom </span> <span class="col-8"> '.$_SESSION['prenom'].'</span> ' ?> </div> <a href="./index.php?ctrl=membre&action=updateInfoPerso"> <img width="30px" src="./img/pen.svg"/>  </a> </div> <br />
+
+        <div class="row"> <div class="forminfo"> <?php echo '<span class="col-4"> Adresse </span> <span class="col-8">'.$_SESSION['adresse'].'</span>' ?> </div> <a href="./index.php?ctrl=membre&action=updateInfoPerso">  <img width="30px" src="./img/pen.svg"/>  </a> </div> <br />
+
+        <div class="row"> <div class="forminfo"> <?php echo '<span class="col-4"> Ville </span> <span class="col-8" > '.$_SESSION['ville'].'</span>' ?> </div> <a href="./index.php?ctrl=membre&action=updateInfoPerso">  <img width="30px" src="./img/pen.svg"/>  </a> </div> <br />
+
+        <div class="row"> <div class="forminfo"> <?php echo ' <span class="col-4" > Date de Naissance </span> <span class="col-8"> '.$_SESSION['dateNaissance'].'</span>' ?> </div> <a href="./index.php?ctrl=membre&action=updateInfoPerso">  <img width="30px" src="./img/pen.svg"/>  </a></div> <br />
+
+        <div class="row"> <div class="forminfo"> <?php echo ' <span class="col-4" > Tel </span> <span class="col-8" > '.$_SESSION['telephone'].'</span>' ?> </div>  <a href="./index.php?ctrl=membre&action=updateInfoPerso">  <img width="30px" src="./img/pen.svg"/>  </a></div> <br />
+
+        <div class="row"> <div class="forminfo"> <?php echo '<span class="col-4"> Ligne preferée </span> <span class="col-8" '.$_SESSION['lignePref'].'</span>' ?> </div>  <a href="./index.php?ctrl=membre&action=updateInfoPerso">  <img width="30px" src="./img/pen.svg"/>  </a></div> <br />
+
+        <div class="row"> <div class="forminfo"> <?php echo '<span class="col-4"> Station preferée </span> <span class="col-8" > '.$_SESSION['stationPref'].'</span>' ?> </div>  <a href="./index.php?ctrl=membre&action=updateInfoPerso">  <img width="30px" src="./img/pen.svg"/>  </a></div><br />
+
+        <div class="row"> <div class="forminfo"> <?php echo '<span class="col-4" > Station preferée 2 </span> <span class="col-8" > '.$_SESSION['stationPref2'].'</span>' ?> </div> <a href="./index.php?ctrl=membre&action=updateInfoPerso">  <img width="30px" src="./img/pen.svg"/>  </a></div><br />
+
+        <div class="row"> <div class="forminfo"> <?php echo '<span class="col-4" > Satisfait </span> <span class="col-8"> '.$_SESSION['satisfait'].'</span>' ?> </div> <a href="./index.php?ctrl=membre&action=updateInfoPerso">  <img width="30px" src="./img/pen.svg"/>  </a></div><br />
+            
+    </div>
      
     
 
-
-    include_once "header.php" ;
+<?php
+    include_once "footer.php" ;
 ?>
