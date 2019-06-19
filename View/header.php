@@ -4,8 +4,11 @@
         <link href="Style/ratp.css" rel="stylesheet" type="text/css"/>
         <link href="Style/menu.css" rel="stylesheet" type="text/css"/>
         <link href="Style/accueil.css" rel="stylesheet" type="text/css"/>
+        <link href="Style/login.css" rel="stylesheet" type="text/css"/>
 
         
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    
         <link rel="icon" href="img/favicon.png"/>
         <script src="javascript/burger.js"></script>
         
@@ -18,6 +21,21 @@
     
 	   <meta name="viewport" content="width=device-width, initial-scale=1">
         
+        <!-- Liens pour la Map -->
+        <link rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin="">
+        </script>
+        <!-- Liens pour l'autocomplétion -->
+        <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.4/dist/cdn/placesAutocompleteDataset.min.js"></script>
+
+
 
     </head>
     
@@ -46,11 +64,11 @@
                         </div> 
 
                         <div class="col-4"> 
-                            <a href=""><img src="img/LOGO-blanc.png" width="111" height="39"></a>
+                            <a href="./index.php?ctrl=default&action=defaultPage"><img src="img/LOGO-blanc.png" width="111" height="39"></a>
                         </div>
 
                         <div class="col-4"> 
-                            <a href="" ><img src="img/contact.svg" width="36" height="36"></a>
+                            <a href="./index.php?ctrl=membre&action=login" ><img src="img/contact.svg" width="36" height="36"></a>
                         </div>
 
                     </div>
