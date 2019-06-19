@@ -1,5 +1,9 @@
 #partiemenu{
     background-color: #2E296A;
+    position: fixed ; 
+    top: 0;
+    width: 100% ; 
+    z-index: 6 ; 
 }
 
 #partiemenu a {
