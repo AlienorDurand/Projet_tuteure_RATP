@@ -1,8 +1,10 @@
 <?php
     include_once "header.php" ;
 ?> 
-        <h2>Rapport du trafic</h2>
+<div id="partietrafic"> 
+        <h2> Info Trafic </h2>
         <ul id="incident"></ul>
+
 
 <script>
     // Url to retrieve lines available on the coverage
@@ -30,7 +32,7 @@
         $.each(navitiaResult.disruptions, function(i, dis) {
             var $li = $('<li>');
         
-            $li.html('Type : '+ dis.cause + ' - Début : ' + dis.application_periods[0].begin + ' - Fin : '+ dis.application_periods[0].end + ' - Message : ' + dis.messages[0].text + ', ' + dis.messages[1].text + '<br /><br />');
+            $li.html(' <div class="infotrafic"> <h6 class="typeinfo"> Type : '+ dis.cause + ' <h6/> <h6 class="temps"> Début : ' + dis.application_periods[0].begin + '  Fin : '+ dis.application_periods[0].end + ' <h6/>  <h6 class="message"> ' + dis.messages[0].text + ' ' + dis.messages[1].text + '<h6/> </div>');
             
             $ul.append($li);
         });
@@ -40,7 +42,7 @@
     
 </script>
 
-
+</div>
 <?php
     include_once "footer.php" ;
 ?>

@@ -6,6 +6,8 @@
         <link href="Style/accueil.css" rel="stylesheet" type="text/css"/>
         <link href="Style/login.css" rel="stylesheet" type="text/css"/>
         <link href="Style/twitter.css" rel="stylesheet" type="text/css"/>
+        <link href="Style/trafic.css" rel="stylesheet" type="text/css"/>
+    
 
         <link href="Style/ratp.css" rel="stylesheet" type="text/css"/>
         
