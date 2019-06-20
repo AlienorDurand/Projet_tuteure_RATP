@@ -8,6 +8,10 @@
     background-color: black ; 
     width: 375px;
     height: 213px;
+} */
+
+#map {
+    z-index: 0;
 }
 
 #partieaccueil form{
@@ -46,4 +50,29 @@
     margin-top: 7% ; 
     margin-bottom: 7% ; 
     margin-left: 50% ;  
+}
+
+.ac-header{
+    font-family: Roboto;
+    font-weight: bold;
+}
+
+.ac-input-dropdown-menu{
+    margin-top: -20px;
+    background-color: rgba(46, 41, 106, 0.95);
+    color: white;
+    border-radius: 20px;
+    z-index: 3;
+    padding: 10px;
+}
+
+.ac-input-suggestion{
+    margin: 5px;
+    padding:5px;
+    cursor: pointer;
+}
+.ac-input-cursor {
+    background-color: aliceblue;
+    color: black;
+    border-radius: 5px;
 }
