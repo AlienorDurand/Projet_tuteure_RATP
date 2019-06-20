@@ -79,7 +79,7 @@
                                     
                                     <a href="#"><li>Plan hors ligne</li></a>
                                     
-                                    <a href="./index.php?ctrl=stat&action=display"><li>Statistiques</li></a>
+                                    <a href="./index.php?ctrl=stat&action=afficheStat"><li>Statistiques</li></a>
                                     
                                     <?php if($_SESSION['mail']){?><a href="./index.php?ctrl=membre&action=pageAccueilMembre"><li>Mon compte</li></a><?php }else{?><a href="./index.php?ctrl=membre&action=login"><li>Mon compte</li></a><?php } ?>
                                     <a href="./index.php?ctrl=membre&action=deconnexion"><li>Déconnexion</li></a>
