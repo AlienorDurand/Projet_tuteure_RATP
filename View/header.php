@@ -5,6 +5,9 @@
         <link href="Style/menu.css" rel="stylesheet" type="text/css"/>
         <link href="Style/accueil.css" rel="stylesheet" type="text/css"/>
         <link href="Style/login.css" rel="stylesheet" type="text/css"/>
+        <link href="Style/recherche.css" rel="stylesheet" type="text/css"/>
+
+
 
         
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
