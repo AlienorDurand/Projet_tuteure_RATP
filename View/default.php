@@ -5,7 +5,6 @@
     <div class="row">
         <div id="partieaccueil" class="col-md-12">
             
-            <!-- <img src="./img/plan.png"> -->
             <div id="map" style="width: 100%; height: 40vh;"></div>
             
             <form action="index.php?ctrl=recherche&action=recherchePage" method="post" name="myform">
