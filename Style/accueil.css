@@ -3,12 +3,9 @@
     top: 59px ; 
 }
 
-
-#partieaccueil img{
-    background-color: black ; 
-    width: 375px;
-    height: 213px;
-} */
+.leaflet-control-zoom > a {
+    margin: 0;
+}
 
 #map {
     z-index: 0;
