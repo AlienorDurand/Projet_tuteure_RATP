@@ -6,7 +6,9 @@
         <link href="Style/accueil.css" rel="stylesheet" type="text/css"/>
         <link href="Style/login.css" rel="stylesheet" type="text/css"/>
         <link href="Style/twitter.css" rel="stylesheet" type="text/css"/>
-
+        <link href="Style/trafic.css" rel="stylesheet" type="text/css"/>
+        <link href="Style/stat.css" rel="stylesheet" type="text/css"/>
+   
         <link href="Style/ratp.css" rel="stylesheet" type="text/css"/>
         
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
@@ -52,11 +54,17 @@
                                 <span></span>
                                 <ul id="menu">
                                     <a href="./index.php?ctrl=default&action=defaultPage"><li>Accueil</li></a>
+                                    
                                     <a href="#"><li>Recherche</li></a>
+                                    
                                     <a href="./index.php?ctrl=twitter&action=afficheTwitter"><li>Twitter</li></a>
+                                    
                                     <a href="./index.php?ctrl=trafic&action=display"><li>Info trafic</li></a>
+                                    
                                     <a href="#"><li>Plan hors ligne</li></a>
-                                    <a href="./index.php?ctrl=stat&action=afficheStat"><li>Statistiques</li></a>
+                                    
+                                    <a href="./index.php?ctrl=stat&action=display"><li>Statistiques</li></a>
+                                    
                                     <?php if($_SESSION['mail']){?><a href="./index.php?ctrl=membre&action=pageAccueilMembre"><li>Mon compte</li></a><?php }else{?><a href="./index.php?ctrl=membre&action=login"><li>Mon compte</li></a><?php } ?>
                                     <a href="./index.php?ctrl=membre&action=deconnexion"><li>Déconnexion</li></a>
                                 </ul>

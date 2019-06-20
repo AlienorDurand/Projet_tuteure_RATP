@@ -68,6 +68,13 @@
     margin-top: 70px;
 }
 
+
+#infocompte a{
+    height: 30px ; 
+    margin: 0px ; 
+    padding: 0px ; 
+}
+
 .forminfo{
     width: 300px;
     height: 45px;
