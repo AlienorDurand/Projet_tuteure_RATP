@@ -79,7 +79,7 @@
                                     
                                     <a href="#"><li>Plan hors ligne</li></a>
                                     
-                                    <a href="./index.php?ctrl=stat&action=display"><li>Statistiques</li></a>
+                                    <a href="./index.php?ctrl=stat&action=afficheStat"><li>Statistiques</li></a>
                                     
                                     <?php if($_SESSION['mail']){?><a href="./index.php?ctrl=membre&action=pageAccueilMembre"><li>Mon compte</li></a><?php }else{?><a href="./index.php?ctrl=membre&action=login"><li>Mon compte</li></a><?php } ?>
                                     <a href="./index.php?ctrl=membre&action=deconnexion"><li>Déconnexion</li></a>
@@ -93,7 +93,11 @@
                         </div>
 
                         <div class="col-4"> 
-                            <?php if($_SESSION['mail']){?><a href="./index.php?ctrl=membre&action=pageAccueilMembre"><img src="img/contact.svg" width="36" height="36"></a><?php }else{?><a href="./index.php?ctrl=membre&action=login"><img src="img/contact.svg" width="36" height="36"></a><?php } ?>
+                            <?php if(isset($_SESSION['mail'])){?>
+                                <a href="./index.php?ctrl=membre&action=pageAccueilMembre"><img src="img/contact.svg" width="36" height="36"></a>
+                            <?php }else{?>
+                                <a href="./index.php?ctrl=membre&action=login"><img src="img/contact.svg" width="36" height="36"></a>
+                            <?php } ?>
                             
                         </div>
 
