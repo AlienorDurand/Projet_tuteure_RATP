@@ -127,11 +127,8 @@ class Connexion {
         return $sql->fetch();      
     }
     function getNbTrajetsStation1($mail){
-<<<<<<< HEAD
         $sql = $this->db->prepare('SELECT COUNT(*) FROM membre m,trajet t WHERE m.id=t.idMembre and m.stationPreferee=t.stationDepart or m.stationPreferee=t.stationArrivee and m.mail =?');
-=======
         $sql = $this->db->prepare('SELECT COUNT(*) FROM trajet t,membre m WHERE m.id=t.idMembre and m.stationPreferee=t.stationDepart or m.stationPreferee=t.stationArrivee and m.mail =?');
->>>>>>> master
         $sql->execute(array($mail));
         return $sql->fetch();
     }

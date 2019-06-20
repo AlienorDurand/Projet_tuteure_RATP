@@ -1,6 +1,6 @@
 <?php
     include_once "header.php" ;
-<<<<<<< HEAD
+//<<<<<<< HEAD
 ?>
 =======
     if($_SESSION['satisfait'] == 0){ $sati  = "oui" ; }else{ $sati = "non";}
