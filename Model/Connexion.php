@@ -11,7 +11,7 @@ class Connexion {
     public function __construct() {
 
         $this->username = 'root';
-        $this->password = 'root'; //root pour MAMP et mysql pour AMPSS
+        $this->password = 'mysql'; //root pour MAMP et mysql pour AMPSS
         
         try {
             $this->db = new PDO('mysql:host=localhost;dbname=ptut', $this->username, $this->password);
@@ -127,12 +127,12 @@ class Connexion {
         return $sql->fetch();
     }
     function getNbTrajetsStation1($mail){
-        $sql = $this->db->prepare('SELECT COUNT(*) FROM trajet t,membre m WHERE m.id=t.idMembre and m.stationPreferee=t.stationDépart or m.stationPreferee=t.stationArrivée and m.mail =?');
+        $sql = $this->db->prepare('SELECT COUNT(*) FROM trajet t,membre m WHERE m.id=t.idMembre and m.stationPreferee=t.stationDepart or m.stationPreferee=t.stationArrivee and m.mail =?');
         $sql->execute(array($mail));
         return $sql->fetch();
     }
     function getNbTrajetsStation2($mail){
-        $sql = $this->db->prepare('SELECT COUNT(*) FROM trajet t,membre m WHERE m.id=t.idMembre and m.stationPreferee2=t.stationDépart or m.stationPreferee2=t.stationArrivée and m.mail =?');
+        $sql = $this->db->prepare('SELECT COUNT(*) FROM trajet t,membre m WHERE m.id=t.idMembre and m.stationPreferee2=t.stationDepart or m.stationPreferee2=t.stationArrivee and m.mail =?');
         $sql->execute(array($mail));
         return $sql->fetch();
     }
