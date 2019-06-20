@@ -1,5 +1,6 @@
 <?php
     include_once "header.php" ;
+if($_SESSION['mail']){
 ?>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -37,5 +38,8 @@
     <div id="chart_div"></div>
 
 <?php
+    }else{
+    echo "<br/><br/><br/><br/>Connectez vous";
+    }
     include_once "footer.php" ;
 ?>
