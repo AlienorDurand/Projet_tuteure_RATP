@@ -75,7 +75,7 @@ class membreController {
                   $membre->insertMembre($_POST['nom'],$_POST['prenom'],$_POST['mail'],$_POST['password']);
                   session_start();
                   $_SESSION['mail'] = $_POST['mail'];
-                  require('./View/membre.php');
+                  //require('./View/membre.php');
                   exit();
 		      }
 		      else {
