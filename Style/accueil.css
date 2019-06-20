@@ -1,8 +1,9 @@
 #partieaccueil{
     background-color: white;
+    top: 59px ; 
 }
 
-/* 
+
 #partieaccueil img{
     background-color: black ; 
     width: 375px;

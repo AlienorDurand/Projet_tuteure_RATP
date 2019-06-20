@@ -1,0 +1,42 @@
+#partietwitter img{
+    height: 15% ; 
+    width: 15% ; 
+    float: left ;
+    margin: 5% ; 
+        
+}
+
+#partietwitter{
+    margin-top: 75px ; 
+}
+
+
+
+#partietwitter h2 {
+    text-align: center ;
+    color: #2E296A  ; 
+}
+
+#partietwitter h6 {
+    text-align: center ;
+    color: #2E296A  ; 
+}
+
+
+iframe{
+    top : 60px ;
+}
+
+#twitter-widget-0{
+    margin-top: 75px ; 
+}
+
+twitter-timeline{
+    margin-top: 75px ; 
+
+}
+
+a{
+        margin-top: 75px ; 
+
+}
