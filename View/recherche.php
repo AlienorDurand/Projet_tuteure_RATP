@@ -2,9 +2,12 @@
     include_once "header.php" ;
 ?>
     <div class="row">
-        <div id="partierecherche" class="col-md-12">
-             <?php echo $depart ?>  
-    
+        <div id="partierecherche" class="col-md-12">  
+            <input class="recherche" type="search" name="depart" placeholder="Départ" id="input_depart" value="<?php echo $depart ?>" disabled="disabled"><br />
+            <input class="recherche" type="search" name="arrivee" placeholder="Arrivée" id="input_arrivee" value="<?php echo $arrivee ?>" disabled="disabled"><br />
+
+
+
         </div>
     </div>
 
@@ -17,6 +20,16 @@
     const trajets = JSON.parse(localStorage.getItem('trajets'));
     console.log(trajets);
 
+    $.each(trajets, function(i, trajet)){
+        var divTrajet = document.createElement("div");
+        var icone
+        divTrajet.id = "trajet_"+i;
+        $.each(trajet, function(i, section)){
+            if(section.mode==="walking"){
+                divTrajet
+            }
+        }
+    }
 
 
     // Affiche les resultats  : a Modifier
