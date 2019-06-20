@@ -21,6 +21,25 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 <script>
+
+/* 
+*   EXEMPLE CHANGER L ICONE D' UN MARKER
+*
+*   var myIcon = L.icon({
+*      iconUrl: 'my-icon.png',
+*      iconSize: [38, 95],
+*      iconAnchor: [22, 94],
+*      popupAnchor: [-3, -76],
+*      shadowUrl: 'my-icon-shadow.png',
+*      shadowSize: [68, 95],
+*      shadowAnchor: [22, 94]
+*   });
+*   L.marker([50.505, 30.57], {icon: myIcon}).addTo(map);
+*/
+
+
+
+
 // SECTION MAP
 ////////////////
     window.onload = getPosMap;
