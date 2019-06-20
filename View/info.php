@@ -1,8 +1,12 @@
 <?php
     include_once "header.php" ;
+<<<<<<< HEAD
+?>
+=======
     if($_SESSION['satisfait'] == 0){ $sati  = "oui" ; }else{ $sati = "non";}
 ?> 
 
+>>>>>>> master
     <div id="infocompte"> 
         <div class="row"> <div class="forminfo">  <?php echo '<span class="col-4" > Nom </span> <span class="col-8" >  '.$_SESSION['nom'].'</span>' ?> </div>  <a href="./index.php?ctrl=membre&action=updateInfoPerso"> <img width="30px" src="./img/pen.svg"/>  </a> </div>  <br/>
 
@@ -16,7 +20,11 @@
 
         <div class="row"> <div class="forminfo"> <?php echo ' <span class="col-4" > Tel </span> <span class="col-8" > '.$_SESSION['telephone'].'</span>' ?> </div>  <a href="./index.php?ctrl=membre&action=updateInfoPerso">  <img width="30px" src="./img/pen.svg"/>  </a></div> <br />
 
+<<<<<<< HEAD
+        <div class="row"> <div class="forminfo"> <?php echo '<span class="col-4"> Ligne preferée </span> <span class="col-8" >'.$_SESSION['lignePreferee'].'</span>' ?> </div>  <a href="./index.php?ctrl=membre&action=updateInfoPerso">  <img width="30px" src="./img/pen.svg"/>  </a></div> <br />
+=======
         <div class="row"> <div class="forminfo"> <?php echo '<span class="col-4"> Ligne preferée </span> <span class="col-8" > '.$_SESSION['lignePreferee'].'</span>' ?> </div>  <a href="./index.php?ctrl=membre&action=updateInfoPerso">  <img width="30px" src="./img/pen.svg"/>  </a></div> <br />
+>>>>>>> master
 
         <div class="row"> <div class="forminfo"> <?php echo '<span class="col-4"> Station preferée </span> <span class="col-8" > '.$_SESSION['stationPreferee'].'</span>' ?> </div>  <a href="./index.php?ctrl=membre&action=updateInfoPerso">  <img width="30px" src="./img/pen.svg"/>  </a></div><br />
 
