@@ -8,8 +8,6 @@ if($_SESSION['mail']){
     <p>Station préférée numéro 1 : <?php echo $stationPref1['stationPreferee'] ?></p>
     <p>Station préférée numéro 2  : <?php echo $stationPref2['stationPreferee2'] ?></p>
     
-    
-    
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
 
