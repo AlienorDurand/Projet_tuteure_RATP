@@ -31,7 +31,7 @@
 
 .duree{
     display: inline-block;
-    margin: 0.5em;
+    margin: 0.85em;
 }
 
 .personne {
@@ -45,5 +45,17 @@
 }
 
 .fleche{
+    cursor: pointer;
     width: 15px;
+}
+
+.derouleDetail {
+    border: 1px solid black;
+    width:90%;
+    height: 90%;
+    margin: auto;
+}
+
+.departTime{
+    display: inline-block;
 }
