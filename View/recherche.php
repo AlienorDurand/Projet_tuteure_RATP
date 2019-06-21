@@ -7,11 +7,10 @@
             <input class="recherche" type="search" name="arrivee" placeholder="Arrivée" id="input_arrivee" value="<?php echo($arrivee) ?>" disabled="disabled"><br />
         </div>
     
-        <a id='btn_retour' href="./index.php?ctrl=default&amp;action=defaultPage">
+        <a id='btn_retour' href="./index.php?ctrl=default&amp;action=defaultPage" onclick="localStorage.clear()">
             Nouvelle Recherche
         </a>
     </div>
-
 <?php 
     include_once "footer.php";
 ?>
