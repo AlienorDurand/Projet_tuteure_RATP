@@ -73,10 +73,11 @@ if($_SESSION['mail']){
         ]);
 
         var options = {
-          title: 'Quels sont vos lignes préférées?'
+          title: 'Quels sont vos lignes préférées?',
+            is3D: true,
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
 
         chart.draw(data, options);
       }
@@ -88,7 +89,7 @@ if($_SESSION['mail']){
     <div id="chart_div"></div>
     
     <h2>Statistiques Globales</h2>
-    <div id="piechart" style="width: 900px; height: 500px;"></div>
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
 </div>
 <?php
     }else{
