@@ -1,10 +1,16 @@
+body{
+    padding:0;
+    margin:0;
+}
+
+
 #partierecherche {
     text-align: center;
     margin-top: 75px ; 
 }
 
 #input_arrivee {
-    margin-top : 0;
+    margin-top : 1em;
 }
 
 .divTrajet {
@@ -16,6 +22,7 @@
 .divMoyenTransport {
     float: left;
     text-align: center;
+    margin-right: 0.2em;
 }
 
 .divBulleLigne {
@@ -23,10 +30,12 @@
     height:24px;
     width:24px;
     border-radius: 20px;
-    float: left;
-    margin-top: 0.2em;
-    margin-right: 0.2em;
+    /* margin-top: 0.2em;
+    margin-right: 0.2em; */
     line-height: initial;
+    text-align: center;
+    margin : auto;
+    justify-content: center;
 }
 
 .duree{
@@ -36,6 +45,7 @@
 
 .personne {
     width: 30px;
+    margin: auto;
 }
 
 .icone {
@@ -52,10 +62,29 @@
 .derouleDetail {
     border: 1px solid black;
     width:90%;
-    height: 90%;
+    height: auto;
     margin: auto;
+    padding-top: 1em;
 }
 
 .departTime{
-    display: inline-block;
+}
+
+.commentaire {
+    color: gray;
+    font-size: 75%;
+    margin: auto;
+}
+
+.map{
+    margin-top: 2em;
+}
+
+.personne_petit{
+    width: 20px;
+    margin-right: 0;
+}
+
+.nomStation {
+    font-weight: bold; 
 }
