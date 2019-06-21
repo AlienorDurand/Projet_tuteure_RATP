@@ -4,7 +4,7 @@
 
     <form id="modifinfocompte" action="./index.php?ctrl=membre&action=sauvInforPerso" method="post" >
         
-        <div class="row"> <div class="formmodifinfo"> <span class="col-4" > Nom </span> <span class="col-8" >    <input type="text" name="nom" value="<?php echo $_SESSION['nom']; ?>" placeholder="<?php echo $_SESSION['nom']; ?>"> </span> </div> </div> <br />
+        <div class="row"> <div class="formmodifinfo"> <span class="col-4" width="200px" > Nom </span> <span class="col-8" >    <input type="text" name="nom" value="<?php echo $_SESSION['nom']; ?>" placeholder="<?php echo $_SESSION['nom']; ?>"> </span> </div> </div> <br />
         
         <div class="row"> <div class="formmodifinfo"> <span class="col-4" > Prénom </span> <span class="col-8" > <input type="text" name="prenom" value="<?php echo $_SESSION['prenom']; ?>" placeholder="<?php echo $_SESSION['prenom']; ?>"> </span> </div> </div><br />
         
