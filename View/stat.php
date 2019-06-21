@@ -73,7 +73,27 @@ if($_SESSION['mail']){
         ]);
 
         var options = {
-          title: 'Quels sont vos lignes préférées?'
+          title: 'Quels sont vos lignes préférées?', 
+          slices: {
+            0: { color: '#FFCD00' },
+            1: { color: '#003CA6' },  
+            2: { color: '#837902' }, 
+            3: { color: '#CF009E' }, 
+            4: { color: '#FF7E2E' }, 
+            5: { color: '#6ECA97' },
+            6: { color: '#FA9ABA' },
+            7: { color: '#E19BDF' },
+            8: { color: '#B6BD00' },
+            9: { color: '#003CA6' },
+            10: { color: '#704B1C' },
+            11: { color: '#007852' },
+            12: { color: '#6EC4E8' },
+            13: { color: '#62259D' },
+              
+              
+            
+        
+          }
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
