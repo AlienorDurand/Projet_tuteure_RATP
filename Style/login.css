@@ -7,14 +7,11 @@
     font-family: 'Roboto';
 }
 
-
 .formulaire .titre{
-    padding-top: 15% ; 
-    padding-bottom: 15% ; 
+    padding-top: 5% ; 
+    padding-bottom: 5% ; 
     font-weight: 200 ; 
 }
-
-
 
 .formulaire input:required {
   border-color: #800000;
@@ -151,15 +148,13 @@
         width: 50% ;
         margin: auto ; 
         margin-top: 80px  
-        
     }
     
      #modifinfocompte{
         top : 80px ; 
         width: 60% ;
         margin: auto ; 
-        margin-top: 80px  
-        
+        margin-top: 80px   
     }
     
     div.formmodifinfo{
@@ -205,6 +200,18 @@
     #bouttonmodif{
         margin-right: 20% ; 
     }
+    
+    .formulaire{
+    padding-top: 80px ; 
+    background-color: #2E296A;
+    }
+    
+    h2.titre{
+        margin: 0 ; 
+        padding: 0 ; 
+        height: 10px ; 
+    }
+    
 
 }
 
