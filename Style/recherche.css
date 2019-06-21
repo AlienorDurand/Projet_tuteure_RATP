@@ -6,3 +6,56 @@
 #input_arrivee {
     margin-top : 0;
 }
+
+.divTrajet {
+    border: solid 1px black; margin: 10px;
+    text-align: left;
+    padding: 0.2em;
+}
+
+.divMoyenTransport {
+    float: left;
+    text-align: center;
+}
+
+.divBulleLigne {
+    color:white;
+    height:24px;
+    width:24px;
+    border-radius: 20px;
+    float: left;
+    margin-top: 0.2em;
+    margin-right: 0.2em;
+    line-height: initial;
+}
+
+.duree{
+    display: inline-block;
+    margin: 0.85em;
+}
+
+.personne {
+    width: 30px;
+}
+
+.icone {
+    display:inline-block;
+    margin: 0.2em;
+    width: 60%;
+}
+
+.fleche{
+    cursor: pointer;
+    width: 15px;
+}
+
+.derouleDetail {
+    border: 1px solid black;
+    width:90%;
+    height: 90%;
+    margin: auto;
+}
+
+.departTime{
+    display: inline-block;
+}
