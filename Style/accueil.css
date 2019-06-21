@@ -94,3 +94,23 @@
     border-radius: 5px;
 }
 
+.favoris{
+    width: 36px ; 
+}
+
+
+
+@media only screen and (min-width: 800px) {
+    .recherche2{
+        width: 200% ; 
+    }
+    
+    .recherche{
+        height: 15% ;
+        width: 40% ; 
+    }
+    
+    .favoris{
+        width: 50px ; 
+    }
+}

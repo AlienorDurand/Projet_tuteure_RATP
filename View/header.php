@@ -94,9 +94,9 @@
 
                         <div class="col-4"> 
                             <?php if(isset($_SESSION['mail'])){?>
-                                <a href="./index.php?ctrl=membre&action=pageAccueilMembre"><img src="img/contact.svg" width="36" height="36"></a>
+                                <a href="./index.php?ctrl=membre&action=pageAccueilMembre"><img class="favoris" src="img/contact.svg" ></a>
                             <?php }else{?>
-                                <a href="./index.php?ctrl=membre&action=login"><img src="img/contact.svg" width="36" height="36"></a>
+                                <a href="./index.php?ctrl=membre&action=login"><img class="favoris" src="img/contact.svg" ></a>
                             <?php } ?>
                             
                         </div>
