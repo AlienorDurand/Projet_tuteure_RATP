@@ -64,7 +64,7 @@
     text-align: left ; 
     font-family: 'Roboto';
     margin: 5% ; 
-    margin-top: 70px;
+    margin-top: 80px ; 
 }
 
 
@@ -144,10 +144,49 @@
 }
 
 
+
 @media only screen and (min-width: 800px) {
-    .forminfo{
-        width: 50% ; 
+    #infocompte{
+        top : 80px ; 
+        width: 50% ;
         margin: auto ; 
+        margin-top: 80px  
+        
+    }
+    
+     #modifinfocompte{
+        top : 80px ; 
+        width: 60% ;
+        margin: auto ; 
+        margin-top: 80px  
+        
+    }
+    
+    div.formmodifinfo{
+        width: 100% ; 
+        margin: auto ; 
+    }
+    
+     #modifinfocompte span.col-4{
+        width: 30% ;
+        margin: 0 ; 
+        padding: 0 ; 
+        
+    }
+    
+    .formmodifinfo input{
+        width: 70% ; 
+    }
+    
+    #modifinfocompte div.row{
+        margin: 0 ; 
+        padding: 0 ; 
+        width: 100% ; 
+        
+    }
+    
+    .forminfo{
+        width: 80% ;
     }
     
     .infocomptes img{
@@ -166,6 +205,7 @@
     #bouttonmodif{
         margin-right: 20% ; 
     }
-    
-    
+
 }
+
+
