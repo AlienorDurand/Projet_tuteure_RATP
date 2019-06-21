@@ -5,10 +5,11 @@
         <div id="partierecherche" class="col-md-12">  
             <input class="recherche" type="search" name="depart" placeholder="Départ" id="input_depart" value="<?php echo($depart) ?>" disabled="disabled"><br />
             <input class="recherche" type="search" name="arrivee" placeholder="Arrivée" id="input_arrivee" value="<?php echo($arrivee) ?>" disabled="disabled"><br />
-
-
-
         </div>
+    
+        <a id='btn_retour' href="./index.php?ctrl=default&amp;action=defaultPage">
+            Nouvelle Recherche
+        </a>
     </div>
 
 <?php 

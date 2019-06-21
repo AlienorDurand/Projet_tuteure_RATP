@@ -88,3 +88,14 @@ body{
 .nomStation {
     font-weight: bold; 
 }
+
+#btn_retour{
+    text-decoration: none;
+    margin: 1em auto;
+    display: block;
+    text-align: center;
+    background-color: #2E296A;
+    color: white;
+    border-radius : 5px;
+    padding: 1em;
+}
