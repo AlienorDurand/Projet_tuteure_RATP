@@ -2,6 +2,7 @@
     include_once "header.php" ;
 if($_SESSION['mail']){
 ?>
+<div id="partiestat">
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
 
@@ -17,14 +18,14 @@ if($_SESSION['mail']){
       function drawChart() {
 
         // Crée la table de données.
-        var data = new google.visualization.DataTable();
+       var data = new google.visualization.DataTable();
         data.addColumn('string', 'Question');
         data.addColumn('number', 'Nombre');
         data.addRows([
           ['Trajets effectués', <?php echo $nbTrajetsEffectues['COUNT(*)'];?>],
           ['Passages par votre station préférée', <?php echo $nbTrajetsStation1['COUNT(*)'];?>],
           ['Passages par votre 2e station préférée', <?php echo $nbTrajetsStation2['COUNT(*)'];?>]
-        ]);
+        ]); 
 
         // Définir les options du graphique
         var options = {'title':'Statistiques personnelles'};
@@ -33,10 +34,12 @@ if($_SESSION['mail']){
         var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
+        
+      
     </script>
     <!--Un div qui contiendra le graphique à secteurs-->
     <div id="chart_div"></div>
-
+</div>
 <?php
     }else{
     echo "<br/><br/><br/><br/>Connectez vous";
