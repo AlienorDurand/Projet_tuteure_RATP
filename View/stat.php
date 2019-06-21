@@ -3,6 +3,10 @@
 if($_SESSION['mail']){
 ?>
 <div id="partiestat">
+    <h1>Statistiques personnel</h1>
+    <p>Ligne préférée : <?php echo $lignePref['lignePreferee'] ?></p>
+    <p>Station préférée numéro 1 : <?php echo $stationPref1['stationPreferee'] ?></p>
+    <p>Station préférée numéro 2  : <?php echo $stationPref2['stationPreferee2'] ?></p>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
 
@@ -39,6 +43,10 @@ if($_SESSION['mail']){
     </script>
     <!--Un div qui contiendra le graphique à secteurs-->
     <div id="chart_div"></div>
+    
+    <h2>Statistiques Globales</h2>
+    
+     <div id="piechart" style="width: 900px; height: 500px;"></div>
 </div>
 <?php
     }else{
