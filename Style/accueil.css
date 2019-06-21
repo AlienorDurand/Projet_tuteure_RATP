@@ -113,4 +113,17 @@
     .favoris{
         width: 50px ; 
     }
+    
+    #partieaccueil form{ 
+    padding-top: 2% ; 
+    }
+    
+    input.boutton3{
+    padding: 1% ; 
+    padding-left: 2% ; 
+    padding-right: 2% ; 
+    margin-top: 1% ; 
+    margin-bottom: 7% ; 
+    margin-left: 50% ;  
+    }
 }
