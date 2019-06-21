@@ -64,7 +64,6 @@
     text-align: left ; 
     font-family: 'Roboto';
     margin: 5% ; 
-
     margin-top: 70px;
 }
 
@@ -99,7 +98,8 @@
     color: #2E296A ; 
     margin : 6% ; 
     top: 59px ;
-    margin-top: 75px ; 
+    margin-top: 75px ;
+    width: 800px ; 
 }
 
 .formmodifinfo{
@@ -143,3 +143,29 @@
     opacity: 1 ; 
 }
 
+
+@media only screen and (min-width: 800px) {
+    .forminfo{
+        width: 50% ; 
+        margin: auto ; 
+    }
+    
+    .infocomptes img{
+        float: none ;  
+    }
+    
+    .col-8{     
+        margin: auto ; 
+    }
+    
+    .formmodifinfo{     
+        width: 50% ; 
+        margin: auto ; 
+    }
+    
+    #bouttonmodif{
+        margin-right: 20% ; 
+    }
+    
+    
+}

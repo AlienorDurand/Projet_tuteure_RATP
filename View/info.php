@@ -3,6 +3,7 @@
     if($_SESSION['satisfait'] == 0){ $sati  = "oui" ; }else{ $sati = "non";}
 ?> 
 
+
     <div id="infocompte"> 
         <div class="row"> <div class="forminfo">  <?php echo '<span class="col-4" > Nom </span> <span class="col-8" >  '.$_SESSION['nom'].'</span>' ?> </div>  <a href="./index.php?ctrl=membre&action=updateInfoPerso"> <img width="30px" src="./img/pen.svg"/>  </a> </div>  <br/>
 

@@ -8,8 +8,21 @@
             <div id="map" style="width: 100%; height: 40vh;"></div>
             
             <form action="index.php?ctrl=recherche&action=recherchePage" method="post" name="myform">
-                <input class="recherche" type="search" name="depart" placeholder="Départ" id="input_depart" value="" required><br />
-                <input class="recherche" type="search" name="arrivee" placeholder="Arrivée" id="input_arrivee" value="" required><br />                
+                
+                <div class="recherche">
+                    <input class="recherche2" type="search" name="depart" placeholder="Départ" id="input_depart" value="" required> 
+                    <a href=""><img class="favori" src="./img/favori.svg"/> </a>  
+                </div>
+                
+                
+                
+                <br />
+                <div class="recherche"> 
+                <input class="recherche2" type="search" name="arrivee" placeholder="Arrivée" id="input_arrivee" value="" required>
+                <a href=""><img class="favori" src="./img/favori.svg"/> </a>    
+                </div>    
+                    
+                <br />                
                 <input class="boutton3" type="submit" name="connexion" value="GO !">
             </form>
         </div>
@@ -21,25 +34,6 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 <script>
-
-/* 
-*   EXEMPLE CHANGER L ICONE D' UN MARKER
-*
-*   var myIcon = L.icon({
-*      iconUrl: 'my-icon.png',
-*      iconSize: [38, 95],
-*      iconAnchor: [22, 94],
-*      popupAnchor: [-3, -76],
-*      shadowUrl: 'my-icon-shadow.png',
-*      shadowSize: [68, 95],
-*      shadowAnchor: [22, 94]
-*   });
-*   L.marker([50.505, 30.57], {icon: myIcon}).addTo(map);
-*/
-
-
-
-
 // SECTION MAP
 ////////////////
     window.onload = getPosMap;

@@ -2,17 +2,13 @@
     background-color: white;
     top: 59px ; 
 }
-
-.leaflet-control-zoom > a {
-    margin: 0;
-}
-
-#map {
+#map{
     z-index: 0;
 }
 
 #partieaccueil form{
     text-align: center ; 
+    padding-top: 5% ; 
 }
 
 .recherche{
@@ -24,10 +20,33 @@
     border-radius: 5px;
     margin-bottom: 7% ; 
     margin-top: 7% ; 
+    margin: auto ; 
     padding: 2% ;  
     color: white ; 
+    z-index: 0 ; 
+    padding: 1% ; 
+    padding-left: -4% ;
+    color: white ;
 }
 
+.recherche2{
+    border: none ; 
+    background: #2E296A ;
+    padding: 0 ; 
+    z-index: 0 ; 
+    margin-left: -60%  ; 
+    color: white ;
+    margin-bottom: 2% ; 
+}
+
+.favori{
+    height: 12px ; 
+    width: 12px ; 
+    z-index: 6 ;
+    float: right ;
+    margin: 1% ; 
+    
+}
 
  #partieaccueil form ::placeholder { 
   color: white ;
@@ -52,6 +71,7 @@
 .ac-header{
     font-family: Roboto;
     font-weight: bold;
+    color: white;
 }
 
 .ac-input-dropdown-menu{
@@ -73,3 +93,4 @@
     color: black;
     border-radius: 5px;
 }
+

@@ -20,4 +20,3 @@ require_once('./controller/' . $ctrl . 'Controller.php');
 $ctrl = $ctrl . 'Controller';
 $controller = new $ctrl($db);
 $controller->$action();
-
