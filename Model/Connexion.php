@@ -138,8 +138,8 @@ class Connexion {
         return $sql->fetch();
     }
     function getTotalLignePref(){
-        $sql = $this->db->('SELECT count(*) as nbStation,lignePreferee FROM membre group by lignePreferee');
-        return $sql->fetch();
+        $sql = $this->db->query('SELECT count(*) as nbStation,lignePreferee FROM membre GROUP BY lignePreferee');
+        return $sql->fetchAll();
     }
 }
 

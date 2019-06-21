@@ -16,8 +16,6 @@ class statController{
         
         //stat globale
         $totalLigne = $stat->getTotalLignePref();
-        var_dump($totalLigne);
-        
         require('./View/stat.php'); 
     }
     
