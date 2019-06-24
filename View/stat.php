@@ -73,7 +73,7 @@ if($_SESSION['mail']){
         ]);
 
         var options = {
-          title: 'Quels sont vos lignes préférées?',
+            title: 'Quels sont vos lignes préférées?',
             is3D: true,
         };
 
