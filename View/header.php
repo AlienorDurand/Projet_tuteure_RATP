@@ -81,7 +81,7 @@
                                     
                                     <a href="./index.php?ctrl=stat&action=afficheStat"><li>Statistiques</li></a>
                                     
-                                    <?php if($_SESSION['mail']){?><a href="./index.php?ctrl=membre&action=pageAccueilMembre"><li>Mon compte</li></a><?php }else{?><a href="./index.php?ctrl=membre&action=login"><li>Mon compte</li></a><?php } ?>
+                                    <?php if(isset($_SESSION['mail'])){?><a href="./index.php?ctrl=membre&action=pageAccueilMembre"><li>Mon compte</li></a><?php }else{?><a href="./index.php?ctrl=membre&action=login"><li>Mon compte</li></a><?php } ?>
                                     <a href="./index.php?ctrl=membre&action=deconnexion"><li>Déconnexion</li></a>
                                 </ul>
                               </div>

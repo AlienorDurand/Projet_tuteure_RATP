@@ -23,7 +23,7 @@
                 </div>    
                     
                 <br />                
-                <input class="boutton3" type="submit" name="connexion" value="GO !">
+                <input class="boutton3" type="button" name="connexion" value="GO !" onclick='clickButton()'>
             </form>
         </div>
       </div>    
@@ -81,7 +81,7 @@
     // Connexion à l'API d'Algolia
     const client = algoliasearch(
         "NGHXUDQIUT",
-        "6fd41beb91ca42e4251d32eae09b3a5e"
+        "9b9d3898db2d1af1ac1451e042319b6c"
     );
     // Voir le dashboard pour modifier des infos
     const index = client.initIndex("mesCoords");
@@ -196,11 +196,13 @@
         datasetName
         ) {
             if (datasetName === "coords") {
+                console.log(suggestion);
                 boolPosD = true;
                 fromTo = "from";
                 getPos(event);
             }
             if (datasetName === "places") {
+                console.log(suggestion);
                 boolPosD = false;
                 search("from", suggestion.latlng);
             }
@@ -212,11 +214,14 @@
         datasetName
         ) {
             if (datasetName === "coords") {
+                console.log(suggestion);
                 boolPosA = true;
                 fromTo = "to";
                 getPos(event);
             }
             if (datasetName === "places") {
+                console.log(suggestion);
+                console.log(suggestion.latlng);
                 boolPosA = false;
                 search("to", suggestion.latlng);
             }
@@ -281,9 +286,6 @@
     // Fonction qui appelle l'API Navitia et passe le resultat à la fonction 'draw' 
     // (A changer pour la passer à une autre page)
     function clickButton() {
-
-        return new Promise((resolve, reject)=>{
-
         if (latTo && latFrom) {
             var url ="https://api.navitia.io/v1/coverage/fr-idf/journeys?from="+lngFrom +";"+latFrom+"&to="+lngTo+";"+latTo
             console.log(url);
@@ -296,7 +298,7 @@
                 },
                 success: function(results){
                     localStorage.setItem('trajets', JSON.stringify(results.journeys));
-                    document.forms.form.submit();
+                    document.forms.myform.submit();
                 },
                 error: function(xhr, textStatus, errorThrown) {
                     alert(
@@ -312,6 +314,5 @@
             alert("entrer un depart et une arrivée");
             console.log(latTo + " " + latFrom);
         }
-        });
-    }
+    };
 </script>
