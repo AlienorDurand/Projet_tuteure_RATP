@@ -7,16 +7,18 @@
             <input class="recherche" type="search" name="arrivee" placeholder="Arrivée" id="input_arrivee" value="<?php echo($arrivee) ?>" disabled="disabled"><br />
         </div>
     
-        <a id='btn_retour' href="./index.php?ctrl=default&amp;action=defaultPage" onclick="localStorage.clear()">
+        <a id='btn_retour' class='btn_perso' href="./index.php?ctrl=default&amp;action=defaultPage" onclick="localStorage.clear()">
             Nouvelle Recherche
         </a>
+        <p id='test'></p>
     </div>
 <?php 
     include_once "footer.php";
 ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <script>
     const trajets = JSON.parse(localStorage.getItem('trajets'));
-    console.log(trajets);
 
     var duree = "";
     var modeTransport = "";
@@ -65,15 +67,19 @@
     derouleDetail.className = "derouleDetail";
     derouleDetail.id = "derouleDetail";
     var departTime = "";
-    var arriveeTime = "";
+    var horaireArrivee = "";
     var idTrajet = "";
     var listMarkers = new Array();
     var group;
     var mymap = null;
+    var horaireDepart;
+    var horaireArrivee;
+    var dureeTrajet;
+    var stationDepart;
+    var stationArrivee;
 
     $.each(listeFleche, function(i, fleche){
         fleche.addEventListener('click', afficheDetail);
-        console.log(fleche.id.slice(7));
     });
 
     
@@ -98,10 +104,13 @@
 
             $.each(trajets, function(i, trajet){
                 if(trajet.type==idTrajet){
-                    console.log('ok '+trajet.type);      
                     let longueurTableau  = trajet.sections.length; 
                     let index = 0;
                     let numeroMetro = null;
+                    horaireDepart = trajet.sections[0].departure_date_time.slice(9,13);
+                    horaireDepart = horaireDepart.slice(0,2)+':'+horaireDepart.slice(2,4);
+                    dureeTrajet = Math.round(trajet.duration / 60);
+                    stationDepart = trajet.sections[0].from.name;
 
                     $.each(trajet.sections, function(j, section){
                         index++;
@@ -156,9 +165,10 @@
                         }
 
                         if(index == longueurTableau){
-                            let arriveeTime = section.arrival_date_time.slice(9,13);
-                            arriveeTime = arriveeTime.slice(0,2)+":"+arriveeTime.slice(2,4);
+                            horaireArrivee = section.arrival_date_time.slice(9,13);
+                            horaireArrivee = horaireArrivee.slice(0,2)+":"+horaireArrivee.slice(2,4);
                             nomStation = section.from.name;
+                            stationArrivee = section.to.name;
                             insertBeforeDetailRow(departTime, nomStation, "departTime", "nomStation");
                             if(commentaire != "") {
                                 if(iconePersonne != ""){
@@ -167,7 +177,7 @@
                                     insertBeforeDetail(commentaire, "commentaire");
                                 }
                             }
-                            insertBeforeDetailRow(arriveeTime, section.to.name, "departTime", "nomStation");
+                            insertBeforeDetailRow(horaireArrivee, section.to.name, "departTime", "nomStation");
                             addMap();
                         }
 
@@ -203,7 +213,6 @@
 
     // Met la Map sur la position 
     function getMap(){
-        console.log('success');
         currentId = document.getElementById("derouleDetail").previousSibling.id;
         $.each(trajets, function(i, trajet){
             if (trajet.type==currentId) {
@@ -256,15 +265,17 @@
                 listMarkers.push(marker);
             }
         });
-        console.log(listMarkers);
         group = new L.featureGroup(listMarkers);
-        console.log(group);
         mymap.fitBounds(group.getBounds());
+
+        <?php if(isset($_SESSION)) { ?>
+            addButton();
+        <?php } ?>
+
     }
 
     // Ajout de la carte
     function addMap(){
-        console.log('addMap');
             insertBeforeDetail(
                 '<div id="map" style="width: 100%; height: 40vh;"></div>',
                 'map'
@@ -280,5 +291,27 @@
         getMap();
     }
 
+    // Ajout d'un bouton de validation du trajet pour les statistiques
+    function addButton(){
+        derouleDetail = document.getElementById('derouleDetail');
+        derouleDetail.insertAdjacentHTML(
+            "beforeend",
+            "<button type='button' id='valide' class='btn_perso' onclick='valideTrajet()'> Valider ce trajet ;) ! </button>"
+        );
+    }
 
+    function valideTrajet(e){
+
+        $.post('./index.php?ctrl=recherche&action=envoitBdd',
+            {
+                heureDepart: horaireDepart,
+                heureArrivee: horaireArrivee,
+                duree : dureeTrajet,
+                stationDepart : stationDepart,
+                stationArrivee : stationArrivee
+            },
+            function(data, status){
+                alert(data);
+            });
+    }
 </script>
