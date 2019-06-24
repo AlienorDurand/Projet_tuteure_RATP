@@ -88,20 +88,34 @@ if($_SESSION['mail']){
             10: { color: '#704B1C' },
             11: { color: '#007852' },
             12: { color: '#6EC4E8' },
-            13: { color: '#62259D' },
-         
-<<<<<<< HEAD
-          }
-=======
-          },  
-            
-          title: 'Quels sont vos lignes préférées?',
-          is3D: true,
->>>>>>> master
+            13: { color: '#62259D' }
+          } 
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
 
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['gauge']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['Satisfaction', <?php echo $moyenneSat[0] ?>]
+        ]);
+
+        var options = {
+          width: 400, height: 120,
+          redFrom: 90, redTo: 100,
+          yellowFrom:75, yellowTo: 90,
+          minorTicks: 5
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
     </script>
@@ -112,13 +126,8 @@ if($_SESSION['mail']){
     <div id="chart_div"></div>
     
     <h2>Statistiques Globales</h2>
-<<<<<<< HEAD
-    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
-=======
-
-    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
-
->>>>>>> master
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div><br/>
+    <div id="chart_div" style="width: 400px; height: 120px;"></div>
 </div>
 <?php
     }else{
