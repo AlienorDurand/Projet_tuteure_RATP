@@ -4,8 +4,6 @@
 <div id="partietrafic"> 
         <h2> Info Trafic </h2>
         <ul id="incident"></ul>
-
-
 <script>
     // Url to retrieve lines available on the coverage
     var trafic = 'https://api.navitia.io/v1/coverage/fr-idf/disruptions?count=10';
