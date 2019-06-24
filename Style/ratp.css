@@ -17,3 +17,8 @@ body {
     font-family: 'Roboto';
     height: 170vw ; 
 }
+
+@font-face {
+    font-family: Parisine;
+    src: url(./Style/fonts/Parisine-Regular.otf) ; 
+}

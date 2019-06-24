@@ -36,7 +36,7 @@
             $.each(trajet.sections, function(i2, section) {
                 modeTransport = "";
                 if (section.mode === "walking") {
-                    modeTransport += "<img class='personne' src='./img/man_walking.png' alt='personne qui marche'/>";
+                    modeTransport += "<img class='personne' src='./img/marcher.svg' alt='personne qui marche'/>";
                 }
                 if (section.type === "public_transport") {
                     modeTransport += section.display_informations.code;
@@ -133,7 +133,7 @@
 
                         if(section.mode == "walking"){
                             commentaire = "Marcher jusqu'à "+section.to.name;
-                            iconePersonne = "<img class='personne_petit' src='./img/man_walking.png' alt='personne qui marche'/>";
+                            iconePersonne = "<img class='personne_petit' src='./img/marcher.svg' alt='personne qui marche'/>";
 
                         }
 
