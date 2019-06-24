@@ -107,14 +107,15 @@
             if (boolPosD == true){
                 setTimeout(() => {
                     e.target.value = "Ma Position";
-                }, 100);
+                    e.target.nextSibling.focus();   
+                }, 10);
             }
         }
         if(e.target.id == 'input_arrivee'){
             if (boolPosA == true){
                 setTimeout(() => {
                     e.target.value = "Ma Position";
-                }, 100);
+                }, 10);
             }            
         }
     }
@@ -280,14 +281,13 @@
         }
     }
 
-    function test(){
-        return true;
-    }
-    // Fonction qui appelle l'API Navitia et passe le resultat à la fonction 'draw' 
-    // (A changer pour la passer à une autre page)
+    // Fonction qui appelle l'API Navitia et passe le resultat localement, et submit le formulaire
     function clickButton() {
+        setTimeout(() => {
+            console.log('click');
+        }, (10));
         if (latTo && latFrom) {
-            var url ="https://api.navitia.io/v1/coverage/fr-idf/journeys?from="+lngFrom +";"+latFrom+"&to="+lngTo+";"+latTo
+            var url ="https://api.navitia.io/v1/coverage/fr-idf/journeys?from="+lngFrom +";"+latFrom+"&to="+lngTo+";"+latTo+"&count=3";
             console.log(url);
             $.ajax({
                 type: "GET",
