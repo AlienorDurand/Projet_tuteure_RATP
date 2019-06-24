@@ -49,3 +49,23 @@
     
     
 }
+
+@media only screen and (min-width: 375px) {
+    #partiestat{
+        width: 375px ; 
+        margin: auto ; 
+        margin-top: 80px ; 
+    }
+    
+    div#strucutremenu.row{
+        width: 375px ; 
+        margin: 0 ; 
+    }
+    
+    
+}
+    
+    
+    
+    
+}
