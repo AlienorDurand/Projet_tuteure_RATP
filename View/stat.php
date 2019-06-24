@@ -3,12 +3,13 @@
 if($_SESSION['mail']){
 ?>
 <div id="partiestat">
-    <h1>Statistiques personnel</h1>
+    <h2>Statistiques personnelles</h2>
     <p>Ligne préférée : <?php echo $lignePref['lignePreferee'] ?></p>
     <p>Station préférée numéro 1 : <?php echo $stationPref1['stationPreferee'] ?></p>
     <p>Station préférée numéro 2  : <?php echo $stationPref2['stationPreferee2'] ?></p>
     
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
     <script type="text/javascript">
 
       // Charge l'API de visualisation et le package corechart. 
@@ -121,7 +122,7 @@ if($_SESSION['mail']){
 </div>
 <?php
     }else{
-    echo "<br/><br/><br/><br/>Connectez vous";
+    echo "<br/> <div id='connexionstat'> <h2> Veuillez vous connecter pour accéder à cette page </h2>  <a href='./index.php?ctrl=membre&action=login'><input class='boutton2' type='submit' name='connexion' value='Connexion'> </a>  </div> ";
     }
     include_once "footer.php" ;
 ?>

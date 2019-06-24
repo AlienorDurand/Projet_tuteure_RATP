@@ -32,3 +32,11 @@
     font-weight: 700 ; 
     color: #2E296A ; 
 }
+
+@media only screen and (min-width: 800px) {
+
+    ul#incident{
+        padding-top: 0 ; 
+    }
+    
+} 
