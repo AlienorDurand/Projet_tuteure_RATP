@@ -11,7 +11,11 @@
                 
                 <div class="recherche">
                     <input class="recherche2" type="search" name="depart" placeholder="Départ" id="input_depart" value="" required> 
-                    <a href=""><img class="favori" src="./img/favori.svg"/> </a>  
+                    <a href=""><img style="width: 120px"lass="favoriDepart" src="./img/favori.svg"/> </a>  
+                    <select id="select_depart" style="visibility:hidden;">
+                        <option id="depart1"><?php echo($departFavori1['stationPreferee']); ?></option>
+                        <option id="depart2"><?php echo($departFavori2['stationPreferee2']); ?></option>
+                    </select>
                 </div>
                 
                 
@@ -19,7 +23,11 @@
                 <br />
                 <div class="recherche"> 
                 <input class="recherche2" type="search" name="arrivee" placeholder="Arrivée" id="input_arrivee" value="" required>
-                <a href=""><img class="favori" src="./img/favori.svg"/> </a>    
+                <a href=""><img class="favoriArrivee" src="./img/favori.svg"/> </a>
+                <select id="select_arrivee" style="visibility:hidden;">
+                    <option id="arrivee1"><?php echo($arretFavori1['stationPreferee']); ?></option>
+                    <option id="arrivee2"><?php echo($arretFavori2['stationPreferee2']); ?></option>
+                </select>
                 </div>    
                     
                 <br />                
@@ -33,6 +41,37 @@
 ?>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
+<script>
+    // Fonction qui va afficher les stations préférées dans un menu déroulant via le bouton favoris
+    function afficheDepartFavoris(){
+        liste_depart=document.getElementById('select_depart');
+        liste_depart.setAttribute("style","visibility:true");
+        depart1=document.getElementById("depart1");
+        depart2=document.getElementById("depart2");
+        
+        depart1.addEventListener("click",function(){
+           document.getElementById("favoriDepart").setAttribute("value",depart1.innerHTML);
+        });
+        depart2.addEventListener("click",function(){
+           document.getElementById("favoriDepart").setAttribute("value",depart2.innerHTML);
+        });
+        
+    }
+    
+    function afficheArriveesFavorites(){
+        liste_arrivee=document.getElementById('select_arrivee');
+        liste_arrivee.setAttribute("style","visibility:true");
+        arrivee1=document.getElementById("arrivee1");
+        arrivee2=document.getElementById("arrivee2");
+        
+        arrivee1.addEventListener("click",function(){
+           document.getElementById("favoriArrivee").setAttribute("value",arrivee1.innerHTML);
+        });
+        arrivee2.addEventListener("click",function(){
+           document.getElementById("favoriArrivee").setAttribute("value",arrivee2.innerHTML);
+        });
+    }
+</script>    
 <script>
 // SECTION MAP
 ////////////////
@@ -315,4 +354,5 @@
             console.log(latTo + " " + latFrom);
         }
     };
+    
 </script>
