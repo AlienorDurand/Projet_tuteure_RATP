@@ -89,7 +89,7 @@ body{
     font-weight: bold; 
 }
 
-#btn_retour{
+.btn_perso {
     text-decoration: none;
     margin: 1em auto;
     display: block;
@@ -98,4 +98,10 @@ body{
     color: white;
     border-radius : 5px;
     padding: 1em;
+}
+
+.btn_perso:hover{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
 }
