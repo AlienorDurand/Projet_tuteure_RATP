@@ -89,10 +89,14 @@ if($_SESSION['mail']){
             12: { color: '#6EC4E8' },
             13: { color: '#62259D' },
          
+<<<<<<< HEAD
+          }
+=======
           },  
             
           title: 'Quels sont vos lignes préférées?',
           is3D: true,
+>>>>>>> master
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
@@ -107,9 +111,13 @@ if($_SESSION['mail']){
     <div id="chart_div"></div>
     
     <h2>Statistiques Globales</h2>
+<<<<<<< HEAD
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+=======
 
     <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
 
+>>>>>>> master
 </div>
 <?php
     }else{
