@@ -7,7 +7,9 @@
 }
 
 #partietwitter{
+    margin: auto ; 
     margin-top: 75px ; 
+    
 }
 
 
@@ -34,4 +36,22 @@ iframe{
 twitter-timeline{
     margin-top: 75px ; 
 
+}
+
+
+@media only screen and (min-width: 800px) {
+    #partietwitter img{
+    height: 20% ; 
+    width: 20% ; 
+    float: left ;
+    margin: 2% ; 
+}
+    #partietwitter{
+    margin-top: 75px ; 
+    width: 40% ; 
+    
+}
+    
+    
+    
 }
