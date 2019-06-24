@@ -88,19 +88,17 @@ if($_SESSION['mail']){
             10: { color: '#704B1C' },
             11: { color: '#007852' },
             12: { color: '#6EC4E8' },
-<<<<<<< HEAD
+            13: { color: '#62259D' },
             13: { color: '#62259D' },
          
-          }
-          },  
-            
+          },   
           title: 'Quelles sont vos lignes préférées?',
           is3D: true,
-=======
-            13: { color: '#62259D' }
-          } 
->>>>>>> master
-        };
+
+             
+          } ; 
+
+        
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
 
@@ -136,13 +134,10 @@ if($_SESSION['mail']){
     <div id="chart_div"></div>
     
     <h2>Statistiques Globales</h2>
-<<<<<<< HEAD
 
-    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
-=======
-    <div id="piechart_3d" style="width: 900px; height: 500px;"></div><br/>
+    <div id="piechart_3d" style="width: 500px; height: 500px;"></div><br/>
     <div id="chart_div" style="width: 400px; height: 120px;"></div>
->>>>>>> master
+
 </div>
 <?php
     }else{
