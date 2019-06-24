@@ -8,8 +8,6 @@ if($_SESSION['mail']){
     <p>Station préférée numéro 1 : <?php echo $stationPref1['stationPreferee'] ?></p>
     <p>Station préférée numéro 2  : <?php echo $stationPref2['stationPreferee2'] ?></p>
     
-    
-    
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
 
@@ -73,8 +71,34 @@ if($_SESSION['mail']){
         ]);
 
         var options = {
+<<<<<<< HEAD
             title: 'Quels sont vos lignes préférées?',
+=======
+<<<<<<< HEAD
+          title: 'Quels sont vos lignes préférées?', 
+          is3D: true ,
+          slices: {
+            0: { color: '#FFCD00' },
+            1: { color: '#003CA6' },  
+            2: { color: '#837902' }, 
+            3: { color: '#CF009E' }, 
+            4: { color: '#FF7E2E' }, 
+            5: { color: '#6ECA97' },
+            6: { color: '#FA9ABA' },
+            7: { color: '#E19BDF' },
+            8: { color: '#B6BD00' },
+            9: { color: '#003CA6' },
+            10: { color: '#704B1C' },
+            11: { color: '#007852' },
+            12: { color: '#6EC4E8' },
+            13: { color: '#62259D' },
+         
+          }
+=======
+          title: 'Quels sont vos lignes préférées?',
+>>>>>>> master
             is3D: true,
+>>>>>>> master
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
@@ -89,7 +113,11 @@ if($_SESSION['mail']){
     <div id="chart_div"></div>
     
     <h2>Statistiques Globales</h2>
+<<<<<<< HEAD
+    <div id="piechart3d" style="width: 900px; height: 500px;"></div>
+=======
     <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+>>>>>>> master
 </div>
 <?php
     }else{
