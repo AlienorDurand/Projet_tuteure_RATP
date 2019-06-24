@@ -141,6 +141,11 @@ class Connexion {
         $sql = $this->db->query('SELECT count(*) as nbStation,lignePreferee FROM membre GROUP BY lignePreferee');
         return $sql->fetchAll();
     }
+    function getId($mail){
+        $sql = $this->db->prepare('SELECT id FROM membre WHERE mail =?');
+        $sql->execute(array($mail));
+        return $sql->fetch();
+    }
 }
 
 
