@@ -71,8 +71,6 @@
                                 <ul id="menu">
                                     <a href="./index.php?ctrl=default&action=defaultPage"><li>Accueil</li></a>
                                     
-                                    <a href="#"><li>Recherche</li></a>
-                                    
                                     <a href="./index.php?ctrl=twitter&action=afficheTwitter"><li>Twitter</li></a>
                                     
                                     <a href="./index.php?ctrl=trafic&action=display"><li>Info trafic</li></a>

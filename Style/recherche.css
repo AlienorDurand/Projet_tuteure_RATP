@@ -14,9 +14,13 @@ body{
 }
 
 .divTrajet {
-    border: solid 1px black; margin: 10px;
+    margin: auto ; 
+    border: solid 1px #2E296A; 
+    border-radius: 5px ; 
+    margin: 10px;
     text-align: left;
     padding: 0.2em;
+    
 }
 
 .divMoyenTransport {
@@ -44,7 +48,7 @@ body{
 }
 
 .personne {
-    width: 30px;
+    width: 20px;
     margin: auto;
 }
 
@@ -60,7 +64,8 @@ body{
 }
 
 .derouleDetail {
-    border: 1px solid black;
+    border: 1px solid #2E296A;
+    border-radius: 5px ; 
     width:90%;
     height: auto;
     margin: auto;
@@ -99,3 +104,36 @@ body{
     border-radius : 5px;
     padding: 1em;
 }
+
+div.divMoyenTransport.divBulleLigne{
+    font-family: 'Parisine' ; 
+    padding-top: 2px ; 
+}
+
+div.BulleLigne{
+    font-family: 'Parisine' ; 
+    padding-top: 2px ; 
+}
+
+@media only screen and (min-width: 800px) {
+    #partierecherche{
+        width: 500px ;
+        margin: auto ; 
+        margin-top: 80px  
+    }
+    
+    .divTrajet{
+        width: 500px ;
+        margin: auto ; 
+        margin-top: 2% ; 
+    }
+    
+    div#derouleDetail.derouleDetail{
+        width: 500px ;
+        margin: auto ; 
+        margin-top: 2% ; 
+    }
+
+}
+
+
