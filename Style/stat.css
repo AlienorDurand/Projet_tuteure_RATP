@@ -50,22 +50,9 @@
     
 }
 
-@media only screen and (min-width: 375px) {
-    #partiestat{
+@media only screen and (max-width: 375px) {
+    #partiemenu{
         width: 375px ; 
-        margin: auto ; 
-        margin-top: 80px ; 
-    }
-    
-    div#strucutremenu.row{
-        width: 375px ; 
-        margin: 0 ; 
-    }
-    
-    
-}
-    
-    
-    
-    
+        margin: auto ;
+
 }

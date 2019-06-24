@@ -3,7 +3,7 @@
 if($_SESSION['mail']){
 ?>
 <div id="partiestat">
-    <h2>Statistiques personnelles</h2>
+    <h2>Statistiques Personnelles</h2>
     <p>Ligne préférée : <?php echo $lignePref['lignePreferee'] ?></p>
     <p>Station préférée numéro 1 : <?php echo $stationPref1['stationPreferee'] ?></p>
     <p>Station préférée numéro 2  : <?php echo $stationPref2['stationPreferee2'] ?></p>
@@ -93,7 +93,7 @@ if($_SESSION['mail']){
           }
           },  
             
-          title: 'Quels sont vos lignes préférées?',
+          title: 'Quelles sont vos lignes préférées?',
           is3D: true,
         };
 
