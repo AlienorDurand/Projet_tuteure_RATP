@@ -69,6 +69,7 @@
     var idTrajet = "";
     var listMarkers = new Array();
     var group;
+    var mymap = null;
 
     $.each(listeFleche, function(i, fleche){
         fleche.addEventListener('click', afficheDetail);
@@ -200,16 +201,12 @@
         );
     }
 
-
-
-    var mymap = null;
-
-
     // Met la Map sur la position 
     function getMap(){
         console.log('success');
+        currentId = document.getElementById("derouleDetail").previousSibling.id;
         $.each(trajets, function(i, trajet){
-            if (trajet.type=="best") {
+            if (trajet.type==currentId) {
                 trajet.sections.forEach(section => {
                     if (section.type!="waiting"){
 
@@ -268,18 +265,18 @@
     // Ajout de la carte
     function addMap(){
         console.log('addMap');
-        insertBeforeDetail(
-            '<div id="map" style="width: 100%; height: 40vh;"></div>',
-            'map'
-        );
+            insertBeforeDetail(
+                '<div id="map" style="width: 100%; height: 40vh;"></div>',
+                'map'
+            );
         // Initialise la Map
-        mymap = L.map('map').setView([48.8534, 2.3488], 11);
-                L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-                    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                    maxZoom: 18,
-                    id: 'mapbox.streets',
-                    accessToken: 'pk.eyJ1IjoibWFyY2FudG9pbmUiLCJhIjoiY2p3dWhuMm9rMGxtODRhazF0b3QxMWNiMyJ9.kw_7XG7uObJT_lXD4PUACA'
-                }).addTo(mymap);
+            mymap = L.map('map').setView([48.8534, 2.3488], 11);
+                    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                        maxZoom: 18,
+                        id: 'mapbox.streets',
+                        accessToken: 'pk.eyJ1IjoibWFyY2FudG9pbmUiLCJhIjoiY2p3dWhuMm9rMGxtODRhazF0b3QxMWNiMyJ9.kw_7XG7uObJT_lXD4PUACA'
+                    }).addTo(mymap);
         getMap();
     }
 
