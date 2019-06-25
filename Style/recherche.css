@@ -13,6 +13,8 @@ body{
     margin-top : 1em;
 }
 
+
+
 .divTrajet {
     margin: auto ; 
     border: solid 1px #2E296A; 
@@ -133,6 +135,11 @@ div.BulleLigne{
         margin: auto ; 
         margin-top: 2% ; 
     }
+    
+    .recherche{
+        width: 500px ; 
+        margin: auto ; 
+}
 
 }
 

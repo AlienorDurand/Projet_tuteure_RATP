@@ -92,7 +92,6 @@ if($_SESSION['mail']){
             13: { color: '#62259D' },
          
           },   
-          title: 'Quelles sont vos lignes préférées?',
           is3D: true,
 
              
@@ -117,13 +116,16 @@ if($_SESSION['mail']){
         ]);
 
         var options = {
+            
+          title: 'Les utilisateurs sont-ils satisfaits?',
           width: 400, height: 120,
           redFrom: 90, redTo: 100,
           yellowFrom:75, yellowTo: 90,
-          minorTicks: 5
+          minorTicks: 5, 
+
         };
 
-        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div2'));
         chart.draw(data, options);
       }
     </script>
@@ -135,8 +137,10 @@ if($_SESSION['mail']){
     
     <h2>Statistiques Globales</h2>
 
-    <div id="piechart_3d" style="width: 500px; height: 500px;"></div><br/>
-    <div id="chart_div" style="width: 400px; height: 120px;"></div>
+    <div id="piechart_3d"></div><br/>
+    
+    
+    <div id="chart_div2" ></div>
 
 </div>
 <?php
