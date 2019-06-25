@@ -75,7 +75,6 @@
                                     
                                     <a href="./index.php?ctrl=trafic&action=display"><li>Info trafic</li></a>
                                     
-                                    <a href="#"><li>Plan hors ligne</li></a>
                                     
                                     <a href="./index.php?ctrl=stat&action=afficheStat"><li>Statistiques</li></a>
                                     

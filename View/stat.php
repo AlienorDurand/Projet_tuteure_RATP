@@ -3,7 +3,7 @@
 if($_SESSION['mail']){
 ?>
 <div id="partiestat">
-    <h2>Statistiques personnelles</h2>
+    <h2>Statistiques Personnelles</h2>
     <p>Ligne préférée : <?php echo $lignePref['lignePreferee'] ?></p>
     <p>Station préférée numéro 1 : <?php echo $stationPref1['stationPreferee'] ?></p>
     <p>Station préférée numéro 2  : <?php echo $stationPref2['stationPreferee2'] ?></p>
@@ -88,9 +88,16 @@ if($_SESSION['mail']){
             10: { color: '#704B1C' },
             11: { color: '#007852' },
             12: { color: '#6EC4E8' },
-            13: { color: '#62259D' }
-          } 
-        };
+            13: { color: '#62259D' },
+            13: { color: '#62259D' },
+         
+          },   
+          is3D: true,
+
+             
+          } ; 
+
+        
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
 
@@ -109,10 +116,13 @@ if($_SESSION['mail']){
         ]);
 
         var options = {
+            
+          title: 'Les utilisateurs sont-ils satisfaits?',
           width: 400, height: 120,
           redFrom: 90, redTo: 100,
           yellowFrom:75, yellowTo: 90,
-          minorTicks: 5
+          minorTicks: 5, 
+
         };
 
         var chart = new google.visualization.Gauge(document.getElementById('chart_div2'));
@@ -126,8 +136,17 @@ if($_SESSION['mail']){
     <div id="chart_div"></div>
     
     <h2>Statistiques Globales</h2>
+<<<<<<< HEAD
+
+    <div id="piechart_3d"></div><br/>
+    
+    
+    <div id="chart_div2" ></div>
+
+=======
     <div id="piechart_3d" style="width: 900px; height: 500px;"></div><br/>
     <div id="chart_div2" style="width: 400px; height: 120px;"></div>
+>>>>>>> master
 </div>
 <?php
     }else{
