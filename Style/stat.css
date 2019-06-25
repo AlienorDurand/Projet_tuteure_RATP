@@ -1,6 +1,7 @@
 #partiestat{
-    margin: auto ; 
+    margin: 2% ; 
     margin-top: 75px ; 
+    
       
 }
 
@@ -16,6 +17,11 @@
     margin: auto ; 
     width: 500px ;
     margin-left: -125px ; 
+}
+
+#chart_div2{
+    margin: auto ; 
+    text-align: center ; 
 }
 
 
@@ -46,6 +52,11 @@
         margin: auto ; 
         margin-top: 80px ; 
     }
-    
-    
+}
+
+@media only screen and (max-width: 375px) {
+    #partiemenu{
+        width: 375px ; 
+        margin: auto ;
+
 }
