@@ -21,7 +21,6 @@ include_once "header.php"
             </div>
 
 
-
             <br />
             <div class="recherche"> 
                 <input class="recherche2" type="search" name="arrivee" placeholder="Arrivée" id="input_arrivee" value="" required>
