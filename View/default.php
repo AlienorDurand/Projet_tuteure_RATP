@@ -1,76 +1,77 @@
 <?php
-    include_once "header.php" 
+include_once "header.php"
 ?>
 
-    <div class="row">
-        <div id="partieaccueil" class="col-md-12">
-            
-            <div id="map" style="width: 100%; height: 40vh;"></div>
-            
-            <form action="index.php?ctrl=recherche&action=recherchePage" method="post" name="myform">
-                
-                <div class="recherche">
-                    <input class="recherche2" type="search" name="depart" placeholder="Départ" id="input_depart" value="" required> 
-                    <a href=""><img style="width: 120px"lass="favoriDepart" src="./img/favori.svg"/> </a>  
-                    <select id="select_depart" style="visibility:hidden;">
-                        <option id="depart1"><?php echo($departFavori1['stationPreferee']); ?></option>
-                        <option id="depart2"><?php echo($departFavori2['stationPreferee2']); ?></option>
-                    </select>
-                </div>
-                
-                
-                
-                <br />
-                <div class="recherche"> 
+<div class="row">
+    <div id="partieaccueil" class="col-md-12">
+
+        <div id="map" style="width: 100%; height: 40vh;"></div>
+
+        <form action="index.php?ctrl=recherche&action=recherchePage" method="post" name="myform">
+
+            <div class="recherche">
+                <input class="recherche2" type="search" name="depart" placeholder="Départ" id="input_depart" value="" required> 
+                <a href=""><img style="width: 120px" class="favoriDepart" src="./img/favori.svg"/> </a>  
+
+            </div>
+            <select id="select_depart" style="visibility:hidden;">
+                <option id="depart1"><?php echo($departFavori1['stationPreferee']); ?></option>
+                <option id="depart2"><?php echo($departFavori2['stationPreferee2']); ?></option>
+            </select>
+
+
+            <br />
+            <div class="recherche"> 
                 <input class="recherche2" type="search" name="arrivee" placeholder="Arrivée" id="input_arrivee" value="" required>
-                <a href=""><img class="favoriArrivee" src="./img/favori.svg"/> </a>
-                <select id="select_arrivee" style="visibility:hidden;">
-                    <option id="arrivee1"><?php echo($arretFavori1['stationPreferee']); ?></option>
-                    <option id="arrivee2"><?php echo($arretFavori2['stationPreferee2']); ?></option>
-                </select>
-                </div>    
-                    
-                <br />                
-                <input class="boutton3" type="button" name="connexion" value="GO !" onclick='clickButton()'>
-            </form>
-        </div>
-      </div>    
+                <a href=""><img style="width: 120px" class="favoriArrivee" src="./img/favori.svg"/> </a>
+
+            </div>
+            <select id="select_arrivee" style="visibility:hidden;">
+                <option id="arrivee1"><?php echo($arretFavori1['stationPreferee']); ?></option>
+                <option id="arrivee2"><?php echo($arretFavori2['stationPreferee2']); ?></option>
+            </select>
+
+            <br />                
+            <input class="boutton3" type="button" name="connexion" value="GO !" onclick='clickButton()'>
+        </form>
+    </div>
+</div>    
 
 <?php
-    include_once "footer.php" 
+include_once "footer.php"
 ?>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 <script>
-    // Fonction qui va afficher les stations préférées dans un menu déroulant via le bouton favoris
-    function afficheDepartFavoris(){
-        liste_depart=document.getElementById('select_depart');
-        liste_depart.setAttribute("style","visibility:true");
-        depart1=document.getElementById("depart1");
-        depart2=document.getElementById("depart2");
-        
-        depart1.addEventListener("click",function(){
-           document.getElementById("favoriDepart").setAttribute("value",depart1.innerHTML);
-        });
-        depart2.addEventListener("click",function(){
-           document.getElementById("favoriDepart").setAttribute("value",depart2.innerHTML);
-        });
-        
-    }
-    
-    function afficheArriveesFavorites(){
-        liste_arrivee=document.getElementById('select_arrivee');
-        liste_arrivee.setAttribute("style","visibility:true");
-        arrivee1=document.getElementById("arrivee1");
-        arrivee2=document.getElementById("arrivee2");
-        
-        arrivee1.addEventListener("click",function(){
-           document.getElementById("favoriArrivee").setAttribute("value",arrivee1.innerHTML);
-        });
-        arrivee2.addEventListener("click",function(){
-           document.getElementById("favoriArrivee").setAttribute("value",arrivee2.innerHTML);
-        });
-    }
+                // Fonction qui va afficher les stations préférées dans un menu déroulant via le bouton favoris
+                function afficheDepartFavoris() {
+                    liste_depart = document.getElementById('select_depart');
+                    liste_depart.setAttribute("style", "visibility:true");
+                    depart1 = document.getElementById("depart1");
+                    depart2 = document.getElementById("depart2");
+
+                    depart1.addEventListener("click", function () {
+                        document.getElementById("favoriDepart").setAttribute("value", depart1.innerHTML);
+                    });
+                    depart2.addEventListener("click", function () {
+                        document.getElementById("favoriDepart").setAttribute("value", depart2.innerHTML);
+                    });
+
+                }
+
+                function afficheArriveesFavorites() {
+                    liste_arrivee = document.getElementById('select_arrivee');
+                    liste_arrivee.setAttribute("style", "visibility:true");
+                    arrivee1 = document.getElementById("arrivee1");
+                    arrivee2 = document.getElementById("arrivee2");
+
+                    arrivee1.addEventListener("click", function () {
+                        document.getElementById("favoriArrivee").setAttribute("value", arrivee1.innerHTML);
+                    });
+                    arrivee2.addEventListener("click", function () {
+                        document.getElementById("favoriArrivee").setAttribute("value", arrivee2.innerHTML);
+                    });
+                }
 </script>    
 <script>
 // SECTION MAP
@@ -84,16 +85,16 @@
 
     // Initialise la Map
     mymap = L.map('map').setView([48.8534, 2.3488], 11);
-            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                maxZoom: 18,
-                id: 'mapbox.streets',
-                accessToken: 'pk.eyJ1IjoibWFyY2FudG9pbmUiLCJhIjoiY2p3dWhuMm9rMGxtODRhazF0b3QxMWNiMyJ9.kw_7XG7uObJT_lXD4PUACA'
-            }).addTo(mymap);
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1IjoibWFyY2FudG9pbmUiLCJhIjoiY2p3dWhuMm9rMGxtODRhazF0b3QxMWNiMyJ9.kw_7XG7uObJT_lXD4PUACA'
+    }).addTo(mymap);
 
 
     // Recupère la position
-    function getPosMap(){
+    function getPosMap() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(succesMap, errorMap);
         } else {
@@ -102,16 +103,17 @@
     }
 
     // Met la Map sur la position 
-    function succesMap(pos){
+    function succesMap(pos) {
         latPos = pos.coords.latitude;
         lngPos = pos.coords.longitude;
         mymap.setView([latPos, lngPos], 15);
         L.marker([latPos, lngPos]).addTo(mymap);
     }
 
-    function errorMap(err){
+    function errorMap(err) {
         console.log(err);
-    };
+    }
+    ;
 
 
 // SECTION AUTOCOMPLETION
@@ -119,9 +121,9 @@
 
     // Connexion à l'API d'Algolia
     const client = algoliasearch(
-        "NGHXUDQIUT",
-        "9b9d3898db2d1af1ac1451e042319b6c"
-    );
+            "NGHXUDQIUT",
+            "9b9d3898db2d1af1ac1451e042319b6c"
+            );
     // Voir le dashboard pour modifier des infos
     const index = client.initIndex("mesCoords");
 
@@ -141,21 +143,21 @@
     input_arrivee.addEventListener('blur', change);
 
     // Pour fixer l'effacement du champs, on ne sait pas pourquoi ...
-    function change(e){
-        if(e.target.id == 'input_depart'){
-            if (boolPosD == true){
+    function change(e) {
+        if (e.target.id == 'input_depart') {
+            if (boolPosD == true) {
                 setTimeout(() => {
                     e.target.value = "Ma Position";
-                    e.target.nextSibling.focus();   
+                    e.target.nextSibling.focus();
                 }, 10);
             }
         }
-        if(e.target.id == 'input_arrivee'){
-            if (boolPosA == true){
+        if (e.target.id == 'input_arrivee') {
+            if (boolPosA == true) {
                 setTimeout(() => {
                     e.target.value = "Ma Position";
                 }, 10);
-            }            
+            }
         }
     }
 
@@ -166,7 +168,7 @@
         algoliasearch: algoliasearch,
         templates: {
             header: '<div class="ac-header">Suggestions</div>',
-            suggestion: function(suggestion) {
+            suggestion: function (suggestion) {
                 let type = "";
                 if (suggestion.type === "trainStation") {
                     // A modifier par un icône !
@@ -188,12 +190,12 @@
 
     // Initialisation de l'objet d'autocomplétion de la Position
     var coordoDataset = {
-        source: autocomplete.sources.hits(index, { hitsPerPage: 1 }),
+        source: autocomplete.sources.hits(index, {hitsPerPage: 1}),
         displayKey: "name",
         name: "coords",
         templates: {
             header: '<div class="ac-header">Ma Position</div>',
-            suggestion: function(suggestion) {
+            suggestion: function (suggestion) {
                 return suggestion.title;
             }
         }
@@ -201,40 +203,40 @@
 
     // Concaténation des deux
     var autocompleteDepart = autocomplete(
-        input_depart,
-        {
-            hint: false,
-            debug: true,
-            cssClasses: { prefix: "ac-input" }, // Les classes css 
-            autoselect : true,
-            autoselectOnBlur : true,
-            minLength : 3
-        },
-        [coordoDataset, placesDataset]
-    );
+            input_depart,
+            {
+                hint: false,
+                debug: true,
+                cssClasses: {prefix: "ac-input"}, // Les classes css 
+                autoselect: true,
+                autoselectOnBlur: true,
+                minLength: 3
+            },
+            [coordoDataset, placesDataset]
+            );
 
     var autocompleteArrivee = autocomplete(
-        input_arrivee,
-        {
-            hint: false,
-            debug: true,
-            cssClasses: { prefix: "ac-input" },
-            autoselect : true,
-            autoselectOnBlur : true,
-            minLength : 3
-        },
-        [coordoDataset, placesDataset]
-    );
+            input_arrivee,
+            {
+                hint: false,
+                debug: true,
+                cssClasses: {prefix: "ac-input"},
+                autoselect: true,
+                autoselectOnBlur: true,
+                minLength: 3
+            },
+            [coordoDataset, placesDataset]
+            );
 
     var autocompleteChangeEvents = ["selected", "autocompleted"];
 
     // Comportements selon certains évènements
-    autocompleteChangeEvents.forEach(function(eventName) {
-        autocompleteDepart.on("autocomplete:" + eventName, function(
-        event,
-        suggestion,
-        datasetName
-        ) {
+    autocompleteChangeEvents.forEach(function (eventName) {
+        autocompleteDepart.on("autocomplete:" + eventName, function (
+                event,
+                suggestion,
+                datasetName
+                ) {
             if (datasetName === "coords") {
                 console.log(suggestion);
                 boolPosD = true;
@@ -248,11 +250,11 @@
             }
         });
 
-        autocompleteArrivee.on("autocomplete:" + eventName, function(
-        event,
-        suggestion,
-        datasetName
-        ) {
+        autocompleteArrivee.on("autocomplete:" + eventName, function (
+                event,
+                suggestion,
+                datasetName
+                ) {
             if (datasetName === "coords") {
                 console.log(suggestion);
                 boolPosA = true;
@@ -268,14 +270,14 @@
         });
     });
 
-    
+
     // Récupère la position
 
     function getPos(e) {
         if (navigator.geolocation) {
             if (e.target.id === "btn_depart" || e.target.id === "input_depart") {
                 fromTo = "from";
-            } else if (e.target.id === "btn_arrivee" || e.target.id === "input_arrivee"){
+            } else if (e.target.id === "btn_arrivee" || e.target.id === "input_arrivee") {
                 fromTo = "to";
             }
             navigator.geolocation.getCurrentPosition(succes, error);
@@ -288,13 +290,14 @@
         latPos = pos.coords.latitude;
         lngPos = pos.coords.longitude;
         index.partialUpdateObject(
-            {
-                coords: [latPos, lngPos],
-                objectID: "1533086121"
-            },
-            (err, content) => {
-                if (err) throw err;
-            }
+                {
+                    coords: [latPos, lngPos],
+                    objectID: "1533086121"
+                },
+                (err, content) => {
+            if (err)
+                throw err;
+        }
         );
         if (fromTo === "from") {
             latFrom = latPos;
@@ -326,7 +329,7 @@
             console.log('click');
         }, (10));
         if (latTo && latFrom) {
-            var url ="https://api.navitia.io/v1/coverage/fr-idf/journeys?from="+lngFrom +";"+latFrom+"&to="+lngTo+";"+latTo+"&count=3";
+            var url = "https://api.navitia.io/v1/coverage/fr-idf/journeys?from=" + lngFrom + ";" + latFrom + "&to=" + lngTo + ";" + latTo + "&count=3";
             console.log(url);
             $.ajax({
                 type: "GET",
@@ -335,24 +338,25 @@
                 headers: {
                     Authorization: "Basic " + btoa(sandboxToken)
                 },
-                success: function(results){
+                success: function (results) {
                     localStorage.setItem('trajets', JSON.stringify(results.journeys));
                     document.forms.myform.submit();
                 },
-                error: function(xhr, textStatus, errorThrown) {
+                error: function (xhr, textStatus, errorThrown) {
                     alert(
-                        'Error when trying to process isochron: "' +
-                        textStatus +
-                        '", "' +
-                        errorThrown +
-                        '"'
-                    );
+                            'Error when trying to process isochron: "' +
+                            textStatus +
+                            '", "' +
+                            errorThrown +
+                            '"'
+                            );
                 }
             });
         } else {
             alert("entrer un depart et une arrivée");
             console.log(latTo + " " + latFrom);
         }
-    };
-    
+    }
+    ;
+
 </script>
