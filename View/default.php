@@ -14,6 +14,7 @@ include_once "header.php"
                 <img style="width: 120px" class="favoriDepart" src="./img/favori.svg"/>
                 <input type="button" value="Départs favoris" id="bouton_depart" onclick="afficheDepartFavoris()">
                 <select id="select_depart" style="visibility:hidden;">
+                    <option></option>
                     <option id="depart1"><?php echo($departFavori1['stationPreferee']); ?></option>
                     <option id="depart2"><?php echo($departFavori2['stationPreferee2']); ?></option>
                 </select>
@@ -27,6 +28,7 @@ include_once "header.php"
                 <img style="width: 120px" class="favoriArrivee" src="./img/favori.svg"/>
                 <input type="button" value="Arrivées favorites" onclick="afficheArriveesFavorites()">
                 <select id="select_arrivee" style="visibility:hidden;">
+                    <option></option>
                     <option id="arrivee1"><?php echo($arretFavori1['stationPreferee']); ?></option>
                     <option id="arrivee2"><?php echo($arretFavori2['stationPreferee2']); ?></option>
                 </select>
@@ -50,14 +52,11 @@ include_once "footer.php"
                     liste_depart.setAttribute("style", "visibility:true");
                     depart1 = document.getElementById("depart1");
                     depart2 = document.getElementById("depart2");
-
-                    depart1.addEventListener("click", function () {
-                        document.getElementById("input_depart").setAttribute("value", depart1.innerHTML);
+           
+                    liste_depart.addEventListener("click", function () {
+                        document.getElementById("input_depart").value = liste_depart.options[liste_depart.selectedIndex].value;
+                        document.getElementById("input_depart")
                     });
-                    depart2.addEventListener("click", function () {
-                        document.getElementById("input_depart").setAttribute("value", depart2.innerHTML);
-                    });
-
                 }
 
                 function afficheArriveesFavorites() {
@@ -65,12 +64,9 @@ include_once "footer.php"
                     liste_arrivee.setAttribute("style", "visibility:true");
                     arrivee1 = document.getElementById("arrivee1");
                     arrivee2 = document.getElementById("arrivee2");
-
-                    arrivee1.addEventListener("click", function () {
-                        document.getElementById("input_arrivee").setAttribute("value", arrivee1.innerHTML);
-                    });
-                    arrivee2.addEventListener("click", function () {
-                        document.getElementById("input_arrivee").setAttribute("value", arrivee2.innerHTML);
+                    
+                    liste_arrivee.addEventListener("click", function () {
+                        document.getElementById("input_arrivee").value = liste_arrivee.options[liste_arrivee.selectedIndex].value;
                     });
                 }
 </script>    
