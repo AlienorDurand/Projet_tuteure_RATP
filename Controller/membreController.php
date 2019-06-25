@@ -1,15 +1,17 @@
 <?php
 
 class membreController {
-   
+   //redirection vers la page de connexion
     public function login(){
         require ('./View/login.php'); 
     }
     
+    //redirection vers la page d'inscription
     public function inscription(){
         require ('./View/inscription.php'); 
     }
     
+    //connexion du membre a son compte
     public function doLogin(){
         if(isset($_POST['connexion']) &&  $_POST['connexion'] == 'Connexion') {
             if((isset($_POST['mail']) && !empty($_POST['mail'])) && (isset($_POST['password']) && !empty($_POST['password']))) {
@@ -58,6 +60,7 @@ class membreController {
         }
     }
     
+    //Inscription du nouveau membre s'il n'est pas deja present dans la base
     public function doInscription(){
         if (isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription') {
 	       // on teste l'existence de nos variables. On teste également si elles ne sont pas vides
@@ -110,10 +113,12 @@ class membreController {
        }
     }
     
+    //redirection vers la page avec les infos affichees par l'ecran
     public function pageAccueilMembre(){
         require('./View/info.php');
     }
     
+    //acces aux donnees personnelles de l'utilisateur connecte
     public function infoPerso(){
 
         $membre = new Connexion();
@@ -141,11 +146,13 @@ class membreController {
         require('./View/info.php');
     }
     
+    //redirection vers la page qui affiche le formulaire afin de pouvoir modifier les infos de l'utilisateur connecte
     public function updateInfoPerso(){
         
         require('./View/modifMembre.php');
     }
     
+    //sauvegarde des données personnelles de l'utilisateur connecté
     public function sauvInforPerso(){
         
         $membre2 = new Connexion();
@@ -177,6 +184,7 @@ class membreController {
         require('./View/info.php');
     }
     
+    //Deconnexion du membre
     public function deconnexion(){
         session_unset();
         require('./View/default.php'); 
