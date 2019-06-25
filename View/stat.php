@@ -3,12 +3,13 @@
 if($_SESSION['mail']){
 ?>
 <div id="partiestat">
-    <h1>Statistiques personnel</h1>
+    <h2>Statistiques Personnelles</h2>
     <p>Ligne préférée : <?php echo $lignePref['lignePreferee'] ?></p>
     <p>Station préférée numéro 1 : <?php echo $stationPref1['stationPreferee'] ?></p>
     <p>Station préférée numéro 2  : <?php echo $stationPref2['stationPreferee2'] ?></p>
     
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
     <script type="text/javascript">
 
       // Charge l'API de visualisation et le package corechart. 
@@ -71,7 +72,6 @@ if($_SESSION['mail']){
         ]);
 
         var options = {
-<<<<<<< HEAD
           title: 'Quels sont vos lignes préférées?', 
           is3D: true ,
           slices: {
@@ -89,16 +89,43 @@ if($_SESSION['mail']){
             11: { color: '#007852' },
             12: { color: '#6EC4E8' },
             13: { color: '#62259D' },
+            13: { color: '#62259D' },
          
-          }
-=======
-          title: 'Quels sont vos lignes préférées?',
-            is3D: true,
->>>>>>> master
-        };
+          },   
+          is3D: true,
+
+             
+          } ; 
+
+        
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
 
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['gauge']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['Satisfaction', <?php echo $moyenneSat[0] ?>]
+        ]);
+
+        var options = {
+            
+          title: 'Les utilisateurs sont-ils satisfaits?',
+          width: 400, height: 120,
+          redFrom: 90, redTo: 100,
+          yellowFrom:75, yellowTo: 90,
+          minorTicks: 5, 
+
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div2'));
         chart.draw(data, options);
       }
     </script>
@@ -110,14 +137,20 @@ if($_SESSION['mail']){
     
     <h2>Statistiques Globales</h2>
 <<<<<<< HEAD
-    <div id="piechart3d" style="width: 900px; height: 500px;"></div>
+
+    <div id="piechart_3d"></div><br/>
+    
+    
+    <div id="chart_div2" ></div>
+
 =======
-    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div><br/>
+    <div id="chart_div2" style="width: 400px; height: 120px;"></div>
 >>>>>>> master
 </div>
 <?php
     }else{
-    echo "<br/><br/><br/><br/>Connectez vous";
+    echo "<br/> <div id='connexionstat'> <h2> Veuillez vous connecter pour accéder à cette page </h2>  <a href='./index.php?ctrl=membre&action=login'><input class='boutton2' type='submit' name='connexion' value='Connexion'> </a>  </div> ";
     }
     include_once "footer.php" ;
 ?>

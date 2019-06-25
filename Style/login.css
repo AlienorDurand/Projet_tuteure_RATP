@@ -212,6 +212,17 @@
         height: 10px ; 
     }
     
+    div.formulaire{
+        padding-right: 250px ;
+        padding-left: 250px ; 
+        
+    }
+    
+    body{
+        background-color: #2E296A ; 
+    }
+    
+    
 
 }
 
