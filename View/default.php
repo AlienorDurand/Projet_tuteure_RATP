@@ -102,6 +102,7 @@ include_once "footer.php"
             alert("Votre navigateur ne supporte pas la géolocalisation");
         }
     }
+    
 
     // Met la Map sur la position 
     function succesMap(pos) {
