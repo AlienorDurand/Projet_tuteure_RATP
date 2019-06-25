@@ -26,7 +26,7 @@ include_once "header.php"
                 <a href=""><img style="width: 120px" class="favoriArrivee" src="./img/favori.svg"/> </a>
 
             </div>
-            <select id="select_arrivee" style="visibility:hidden;">
+            <select id="select_arrivee">
                 <option id="arrivee1"><?php echo($arretFavori1['stationPreferee']); ?></option>
                 <option id="arrivee2"><?php echo($arretFavori2['stationPreferee2']); ?></option>
             </select>
