@@ -11,7 +11,7 @@ class Connexion {
     public function __construct() {
 
         $this->username = 'root';
-        $this->password = 'root'; //root pour MAMP et mysql pour AMPSS
+        $this->password = 'mysql'; //root pour MAMP et mysql pour AMPSS
         
         try {
             $this->db = new PDO('mysql:host=localhost;dbname=ptut', $this->username, $this->password);

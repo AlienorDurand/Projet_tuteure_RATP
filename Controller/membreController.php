@@ -1,22 +1,7 @@
 <?php
 
 class membreController {
-<<<<<<< HEAD
-   //redirection vers la page de connexion
-    public function login(){
-        require ('./View/login.php'); 
-    }
-    
-    //redirection vers la page d'inscription
-    public function inscription(){
-        require ('./View/inscription.php'); 
-    }
-    
-    //connexion du membre a son compte
-    public function doLogin(){
-        if(isset($_POST['connexion']) &&  $_POST['connexion'] == 'Connexion') {
-            if((isset($_POST['mail']) && !empty($_POST['mail'])) && (isset($_POST['password']) && !empty($_POST['password']))) {
-=======
+
 
     public function login() {
         require ('./View/login.php');
@@ -29,9 +14,11 @@ class membreController {
     public function doLogin() {
         if (isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion') {
             if ((isset($_POST['mail']) && !empty($_POST['mail'])) && (isset($_POST['password']) && !empty($_POST['password']))) {
->>>>>>> master
+
                 $membre = new Connexion();
                 $data = $membre->getMembre($_POST['mail'], $_POST['password']);
+                var_dump($_SESSION['password']);
+                
                 if ($data[0] == 1) {
                     session_start();
                     $_SESSION['mail'] = $_POST['mail'];
@@ -70,14 +57,11 @@ class membreController {
             }
         }
     }
-<<<<<<< HEAD
+
     
-    //Inscription du nouveau membre s'il n'est pas deja present dans la base
-    public function doInscription(){
-=======
+
 
     public function doInscription() {
->>>>>>> master
         if (isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription') {
             // on teste l'existence de nos variables. On teste également si elles ne sont pas vides
             if ((isset($_POST['nom']) && !empty($_POST['nom'])) && (isset($_POST['prenom']) && !empty($_POST['prenom'])) && (isset($_POST['mail']) && !empty($_POST['mail'])) && (isset($_POST['password']) && !empty($_POST['password'])) && (isset($_POST['password_confirm']) && !empty($_POST['password_confirm']))) {
@@ -125,23 +109,15 @@ class membreController {
             }
         }
     }
-<<<<<<< HEAD
+
     
-    //redirection vers la page avec les infos affichees par l'ecran
-    public function pageAccueilMembre(){
-        require('./View/info.php');
-    }
-    
-    //acces aux donnees personnelles de l'utilisateur connecte
-    public function infoPerso(){
-=======
 
     public function pageAccueilMembre() {
         require('./View/info.php');
     }
 
     public function infoPerso() {
->>>>>>> master
+
 
         $membre = new Connexion();
         $nom = $membre->getNom($_SESSION['mail']);
@@ -167,18 +143,7 @@ class membreController {
 
         require('./View/info.php');
     }
-<<<<<<< HEAD
-    
-    //redirection vers la page qui affiche le formulaire afin de pouvoir modifier les infos de l'utilisateur connecte
-    public function updateInfoPerso(){
-        
-        require('./View/modifMembre.php');
-    }
-    
-    //sauvegarde des données personnelles de l'utilisateur connecté
-    public function sauvInforPerso(){
-        
-=======
+
 
     public function updateInfoPerso() {
 
@@ -187,7 +152,7 @@ class membreController {
 
     public function sauvInforPerso() {
 
->>>>>>> master
+
         $membre2 = new Connexion();
         $mdp = md5($_POST['password']);
         $membre2->update($_POST['mail'],$mdp,$_POST['nom'], $_POST['prenom'], $_POST['adresse'], $_POST['ville'], $_POST['dateNaissance'], $_POST['telephone'], $_POST['lignePreferee'], $_POST['stationPreferee'], $_POST['satisfait'], $_POST['stationPreferee2'], $_SESSION['mail']);
@@ -218,14 +183,8 @@ class membreController {
 
         require('./View/info.php');
     }
-<<<<<<< HEAD
-    
-    //Deconnexion du membre
-    public function deconnexion(){
-=======
 
     public function deconnexion() {
->>>>>>> master
         session_unset();
         require('./View/default.php');
     }
