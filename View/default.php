@@ -11,25 +11,27 @@ include_once "header.php"
 
             <div class="recherche">
                 <input class="recherche2" type="search" name="depart" placeholder="Départ" id="input_depart" value="" required> 
-                <a href=""><img style="width: 120px" class="favoriDepart" src="./img/favori.svg"/> </a>  
-
+                <img style="width: 120px" class="favoriDepart" src="./img/favori.svg"/>
+                <input type="button" value="Départs favoris" id="bouton_depart" onclick="afficheDepartFavoris()">
+                <select id="select_depart" style="visibility:hidden;">
+                    <option id="depart1"><?php echo($departFavori1['stationPreferee']); ?></option>
+                    <option id="depart2"><?php echo($departFavori2['stationPreferee2']); ?></option>
+                </select>
             </div>
-            <select id="select_depart" style="visibility:hidden;">
-                <option id="depart1"><?php echo($departFavori1['stationPreferee']); ?></option>
-                <option id="depart2"><?php echo($departFavori2['stationPreferee2']); ?></option>
-            </select>
+
 
 
             <br />
             <div class="recherche"> 
                 <input class="recherche2" type="search" name="arrivee" placeholder="Arrivée" id="input_arrivee" value="" required>
-                <a href=""><img style="width: 120px" class="favoriArrivee" src="./img/favori.svg"/> </a>
-
+                <img style="width: 120px" class="favoriArrivee" src="./img/favori.svg"/>
+                <input type="button" value="Arrivées favorites" onclick="afficheArriveesFavorites()">
+                <select id="select_arrivee" style="visibility:hidden;">
+                    <option id="arrivee1"><?php echo($arretFavori1['stationPreferee']); ?></option>
+                    <option id="arrivee2"><?php echo($arretFavori2['stationPreferee2']); ?></option>
+                </select>
             </div>
-            <select id="select_arrivee" style="visibility:hidden;">
-                <option id="arrivee1"><?php echo($arretFavori1['stationPreferee']); ?></option>
-                <option id="arrivee2"><?php echo($arretFavori2['stationPreferee2']); ?></option>
-            </select>
+
 
             <br />                
             <input class="boutton3" type="button" name="connexion" value="GO !" onclick='clickButton()'>
@@ -51,10 +53,10 @@ include_once "footer.php"
                     depart2 = document.getElementById("depart2");
 
                     depart1.addEventListener("click", function () {
-                        document.getElementById("favoriDepart").setAttribute("value", depart1.innerHTML);
+                        document.getElementById("input_depart").setAttribute("value", depart1.innerHTML);
                     });
                     depart2.addEventListener("click", function () {
-                        document.getElementById("favoriDepart").setAttribute("value", depart2.innerHTML);
+                        document.getElementById("input_depart").setAttribute("value", depart2.innerHTML);
                     });
 
                 }
@@ -66,10 +68,10 @@ include_once "footer.php"
                     arrivee2 = document.getElementById("arrivee2");
 
                     arrivee1.addEventListener("click", function () {
-                        document.getElementById("favoriArrivee").setAttribute("value", arrivee1.innerHTML);
+                        document.getElementById("input_arrivee").setAttribute("value", arrivee1.innerHTML);
                     });
                     arrivee2.addEventListener("click", function () {
-                        document.getElementById("favoriArrivee").setAttribute("value", arrivee2.innerHTML);
+                        document.getElementById("input_arrivee").setAttribute("value", arrivee2.innerHTML);
                     });
                 }
 </script>    
