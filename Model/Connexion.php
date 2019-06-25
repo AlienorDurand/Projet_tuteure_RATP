@@ -66,9 +66,11 @@ class Connexion {
      * @param type $statPref2
      * @param type $mail
      */
-    function update($nom,$prenom,$adr,$vil,$dateNai,$tel,$lignePref,$staPref,$satis,$statPref2,$mail){
+    function update($newMail,$password,$nom,$prenom,$adr,$vil,$dateNai,$tel,$lignePref,$staPref,$satis,$statPref2,$mail){
         $sql = $this->db->prepare('
         UPDATE membre SET 
+        mail = ?,
+        password = ?,
         nom = ?,
         prenom = ?,
         adresse = ? ,
@@ -81,7 +83,7 @@ class Connexion {
         stationPreferee2=?
         where mail=?
         ');
-        $sql->execute(array($nom,$prenom,$adr,$vil,$dateNai,$tel,$lignePref,$staPref,$satis,$statPref2,$mail)); 
+        $sql->execute(array($newMail,$password,$nom,$prenom,$adr,$vil,$dateNai,$tel,$lignePref,$staPref,$satis,$statPref2,$mail)); 
     }
     
     /**

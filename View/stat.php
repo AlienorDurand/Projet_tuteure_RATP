@@ -115,7 +115,7 @@ if($_SESSION['mail']){
           minorTicks: 5
         };
 
-        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div2'));
         chart.draw(data, options);
       }
     </script>
@@ -127,7 +127,7 @@ if($_SESSION['mail']){
     
     <h2>Statistiques Globales</h2>
     <div id="piechart_3d" style="width: 900px; height: 500px;"></div><br/>
-    <div id="chart_div" style="width: 400px; height: 120px;"></div>
+    <div id="chart_div2" style="width: 400px; height: 120px;"></div>
 </div>
 <?php
     }else{

@@ -4,7 +4,11 @@
 ?> 
 
 
-    <div id="infocompte"> 
+    <div id="infocompte">
+        <div class="row"> <div class="forminfo">  <?php echo '<span class="col-4" > Mail </span> <span class="col-8" >  '.$_SESSION['mail'].'</span>' ?> </div>  <a href="./index.php?ctrl=membre&action=updateInfoPerso"> <img width="30px" src="./img/pen.svg"/>  </a> </div>  <br/>
+        
+        <div class="row"> <div class="forminfo">  <?php echo '<span class="col-4" > Mot de passe </span> <span class="col-8" >********</span>' ?> </div>  <a href="./index.php?ctrl=membre&action=updateInfoPerso"> <img width="30px" src="./img/pen.svg"/>  </a> </div>  <br/>
+        
         <div class="row"> <div class="forminfo">  <?php echo '<span class="col-4" > Nom </span> <span class="col-8" >  '.$_SESSION['nom'].'</span>' ?> </div>  <a href="./index.php?ctrl=membre&action=updateInfoPerso"> <img width="30px" src="./img/pen.svg"/>  </a> </div>  <br/>
 
         <div class="row"> <div class="forminfo"> <?php echo '<span class="col-4"> Prénom </span> <span class="col-8"> '.$_SESSION['prenom'].'</span> ' ?> </div> <a href="./index.php?ctrl=membre&action=updateInfoPerso"> <img width="30px" src="./img/pen.svg"/>  </a> </div> <br />
