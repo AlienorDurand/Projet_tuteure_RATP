@@ -101,7 +101,7 @@
                 "afterend",
                 derouleDetail
             );
-
+            var tabStations = new Array();
             $.each(trajets, function(i, trajet){
                 if(trajet.type==idTrajet){
                     let longueurTableau  = trajet.sections.length; 
@@ -110,7 +110,6 @@
                     horaireDepart = trajet.sections[0].departure_date_time.slice(9,13);
                     horaireDepart = horaireDepart.slice(0,2)+':'+horaireDepart.slice(2,4);
                     dureeTrajet = Math.round(trajet.duration / 60);
-                    stationDepart = trajet.sections[0].from.name;
 
                     $.each(trajet.sections, function(j, section){
                         index++;
@@ -120,7 +119,9 @@
                         let commentaire = "";
                         let iconePersonne = "";
 
+
                         if(section.type == "public_transport"){
+                            tabStations.push(section.from.name);
                             nomStation = section.from.name;
                         }                       
 
@@ -165,10 +166,12 @@
                         }
 
                         if(index == longueurTableau){
+                            if(section.from.embedded_type == "stop_point"){
+                                tabStations.push(section.from.name);
+                            }
                             horaireArrivee = section.arrival_date_time.slice(9,13);
                             horaireArrivee = horaireArrivee.slice(0,2)+":"+horaireArrivee.slice(2,4);
                             nomStation = section.from.name;
-                            stationArrivee = section.to.name;
                             insertBeforeDetailRow(departTime, nomStation, "departTime", "nomStation");
                             if(commentaire != "") {
                                 if(iconePersonne != ""){
@@ -178,6 +181,10 @@
                                 }
                             }
                             insertBeforeDetailRow(horaireArrivee, section.to.name, "departTime", "nomStation");
+
+                            stationDepart = tabStations[0];
+                            stationArrivee = tabStations[tabStations.length - 1 ];
+
                             addMap();
                         }
 
