@@ -11,8 +11,7 @@ include_once "header.php"
 
             <div class="recherche">
                 <input class="recherche2" type="search" name="depart" placeholder="Départ" id="input_depart" value="" required> 
-                <img style="width: 120px" class="favoriDepart" src="./img/favori.svg"/>
-                <input type="button" value="Départs favoris" id="bouton_depart" onclick="afficheDepartFavoris()">
+                <button class="boutonfav" type="button" style="border: 0; background: transparent" id="bouton_depart" onclick="afficheDepartFavoris()"> <img class="favoris" src="./img/favori.svg" alt="favori" /> </button> 
                 <select id="select_depart" style="visibility:hidden;">
                     <option></option>
                     <option id="depart1"><?php echo($departFavori1['stationPreferee']); ?></option>
@@ -25,15 +24,13 @@ include_once "header.php"
             <br />
             <div class="recherche"> 
                 <input class="recherche2" type="search" name="arrivee" placeholder="Arrivée" id="input_arrivee" value="" required>
-                <img style="width: 120px" class="favoriArrivee" src="./img/favori.svg"/>
-                <input type="button" value="Arrivées favorites" onclick="afficheArriveesFavorites()">
+                <button class="boutonfav" type="button" style="border: 0; background: transparent" onclick="afficheArriveesFavorites()"> <img src="./img/favori.svg" class="favoris" alt="favori" /> </button> 
                 <select id="select_arrivee" style="visibility:hidden;">
                     <option></option>
                     <option id="arrivee1"><?php echo($arretFavori1['stationPreferee']); ?></option>
                     <option id="arrivee2"><?php echo($arretFavori2['stationPreferee2']); ?></option>
                 </select>
             </div>
-
 
             <br />                
             <input class="boutton3" type="button" name="connexion" value="GO !" onclick='clickButton()'>
@@ -99,6 +96,7 @@ include_once "footer.php"
             alert("Votre navigateur ne supporte pas la géolocalisation");
         }
     }
+    
 
     // Met la Map sur la position 
     function succesMap(pos) {

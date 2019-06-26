@@ -34,19 +34,20 @@
     background: #2E296A ;
     padding: 0 ; 
     z-index: 0 ; 
-    margin-left: -60%  ; 
+    margin-left: -100%  ; 
     color: white ;
     margin-bottom: 2% ; 
     margin-top: 0 !important ;
+    width: 50% ; 
+    
 }
 
 img.favoriArivee{
     height: 12px ; 
     width: 12px ;
-    z-index: 6 ;
+    z-index: 5 ;
     float: right ;
     margin: 1% ; 
-    
 }
 
  #partieaccueil form ::placeholder { 
@@ -96,14 +97,38 @@ img.favoriArivee{
 }
 
 .favoris{
-    width: 36px ; 
+    width: 20px ; 
+}
+
+#select_depart{
+    border: none ; 
+    font-family: 'Parisine' ; 
+    width  
 }
 
 
+.boutonfav{
+        float: right  ;
+    }
+
+
+@media only screen and (max-width: 375px) {
+    #select_depart, #select_arrivee{
+        padding: 0 ; 
+        margin-left: -1.5% ; 
+        margin-top: -3% ; 
+        z-index: 6 ; 
+        width : 300px ; 
+        background-color: #2E296A; 
+        border-top-left-radius: 0 ; 
+        border-top-right-radius: 0 ; 
+    }
+
+}
 
 @media only screen and (min-width: 800px) {
     .recherche2{
-        width: 200% ; 
+        width: 100% ; 
     }
     
     .recherche{
@@ -111,9 +136,6 @@ img.favoriArivee{
         width: 40% ; 
     }
     
-    .favoris{
-        width: 50px ; 
-    }
     
     #partieaccueil form{ 
     padding-top: 2% ; 
