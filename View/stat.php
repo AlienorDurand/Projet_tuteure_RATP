@@ -1,6 +1,6 @@
 <?php
     include_once "header.php" ;
-if($_SESSION['mail']){
+if($_SESSION){
 ?>
 <div id="partiestat">
     <h2>Statistiques Personnelles</h2>
