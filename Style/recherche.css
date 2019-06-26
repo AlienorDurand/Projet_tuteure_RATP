@@ -74,8 +74,6 @@ body{
     padding-top: 1em;
 }
 
-.departTime{
-}
 
 .commentaire {
     color: gray;
@@ -96,7 +94,7 @@ body{
     font-weight: bold; 
 }
 
-#btn_retour{
+.btn_perso {
     text-decoration: none;
     margin: 1em auto;
     display: block;
@@ -107,6 +105,11 @@ body{
     padding: 1em;
 }
 
+.btn_perso:hover{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
 div.divMoyenTransport.divBulleLigne{
     font-family: 'Parisine' ; 
     padding-top: 2px ; 
