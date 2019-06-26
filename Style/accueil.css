@@ -33,12 +33,11 @@
     border: none ; 
     background: #2E296A ;
     padding: 0 ; 
-    z-index: 0 ; 
-    margin-left: -100%  ; 
+    z-index: 0 ;  
     color: white ;
     margin-bottom: 2% ; 
     margin-top: 0 !important ;
-    width: 50% ; 
+    width: 100px ; 
     
 }
 
@@ -103,12 +102,12 @@ img.favoriArivee{
 #select_depart{
     border: none ; 
     font-family: 'Parisine' ; 
-    width  
 }
 
 
 .boutonfav{
         float: right  ;
+        margin-top: -30px ; 
     }
 
 
@@ -117,36 +116,72 @@ img.favoriArivee{
         padding: 0 ; 
         margin-left: -1.5% ; 
         margin-top: -3% ; 
-        z-index: 6 ; 
+        z-index: 5 ; 
         width : 300px ; 
         background-color: #2E296A; 
         border-top-left-radius: 0 ; 
         border-top-right-radius: 0 ; 
+        color: white ; 
+        border: 0 ; 
+        margin-top: -30px ; 
     }
+    
+    img.favoriArivee{
+        height: 12px ; 
+        width: 12px ;
+        z-index: 6 ;
+        float: right ;
+        margin-top: -50px ; 
+        background-color: red ; 
+}
+    
+
 
 }
 
 @media only screen and (min-width: 800px) {
     .recherche2{
         width: 100% ; 
+        float: left; 
+        display: inline-block ; 
+        position: relative ; 
     }
     
+    #select_depart, #select_arrivee{
+        float: right; 
+        display: inline-block ;
+        position: relative ;
+        margin-top: -26px ; 
+        margin-right: 34px ; 
+    }
     .recherche{
         height: 15% ;
-        width: 40% ; 
     }
     
     
     #partieaccueil form{ 
-    padding-top: 2% ; 
+        padding-top: 2% ; 
     }
     
     input.boutton3{
-    padding: 1% ; 
-    padding-left: 2% ; 
-    padding-right: 2% ; 
-    margin-top: 1% ; 
-    margin-bottom: 7% ; 
-    margin-left: 50% ;  
+        padding: 1% ; 
+        padding-left: 2% ; 
+        padding-right: 2% ; 
+        margin-top: 1% ; 
+        margin-bottom: 7% ; 
+        margin-left: 50% ;  
+    
     }
 }
+
+
+
+
+.algolia-autocomplete{
+    width: 200px ; 
+    margin-right: -100px ; 
+    padding: 0 ; 
+    position: inherit ; 
+}
+
+
