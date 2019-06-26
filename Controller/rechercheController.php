@@ -23,7 +23,6 @@ class rechercheController{
                 $id = $connexion->getId($mail);
                 $db = $connexion->getDb();
 
-                $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false); 
                 $sql = $db->prepare('INSERT INTO `trajet` (`stationDepart`,`stationArrivee`, `heureDepart`, `heureArrivee`, `duree`,`idMembre` )
                                      VALUES(?,?,?,?,?,?)');
                 $sql->execute(array($_POST['stationDepart'], $_POST['stationArrivee'], $_POST['heureDepart'],
@@ -31,6 +30,8 @@ class rechercheController{
                 echo('Merci !');
 
             }
+        } else {
+            echo('ERROR');
         }
         else{
             echo "erreur";
