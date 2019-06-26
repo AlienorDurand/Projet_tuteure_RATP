@@ -11,5 +11,26 @@ class rechercheController{
         }
        require('./View/recherche.php'); 
     }
+
+    public function envoitBdd(){
+        if(isset($_POST['heureDepart']) && isset($_POST['heureArrivee']) && isset($_POST['duree']) && isset($_POST['stationDepart']) && isset($_POST['stationArrivee']) ){
+            if(!isset($_SESSION)){
+                echo("Il faut vous connecter");
+            } else {
+                $connexion = new Connexion();
+                $mail = $_SESSION['mail'];
+                $id = $connexion->getId($mail);
+                $db = $connexion->getDb();
+
+                $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false); 
+                $sql = $db->prepare('INSERT INTO `trajet` (`stationDepart`,`stationArrivee`, `heureDepart`, `heureArrivee`, `duree`,`idMembre` )
+                                     VALUES(?,?,?,?,?,?)');
+                $sql->execute(array($_POST['stationDepart'], $_POST['stationArrivee'], $_POST['heureDepart'],
+                                             $_POST['heureArrivee'], $_POST['duree'], intval($id[0]))); 
+                echo('Merci !');
+
+            }
+        }
+    }
     
 }

@@ -11,12 +11,17 @@ include_once "header.php"
 
             <div class="recherche">
                 <input class="recherche2" type="search" name="depart" placeholder="Départ" id="input_depart" value="" required> 
-                <button class="boutonfav" type="button" style="border: 0; background: transparent" id="bouton_depart" onclick="afficheDepartFavoris()"> <img class="favoris" src="./img/favori.svg" alt="favori" /> </button> 
-                <select id="select_depart" style="visibility:hidden;">
-                    <option></option>
-                    <option id="depart1"><?php echo($departFavori1['stationPreferee']); ?></option>
-                    <option id="depart2"><?php echo($departFavori2['stationPreferee2']); ?></option>
-                </select>
+                <img style="width: 120px" class="favoriDepart" src="./img/favori.svg"/>
+                <?php if(isset($_SESSION['mail'])){ 
+                    echo ("
+                        <input type='button' value='Départs favoris' id='bouton_depart' onclick='afficheDepartFavoris()'>
+                        <select id='select_depart' style='visibility:hidden;'>
+                            <option></option>
+                            <option id='depart1'>".$departFavori1['stationPreferee']."</option>
+                            <option id='depart2'>".$departFavori2['stationPreferee2']."</option>
+                        </select>
+                    ");
+                } ?>
             </div>
 
 
@@ -24,12 +29,17 @@ include_once "header.php"
             <br />
             <div class="recherche"> 
                 <input class="recherche2" type="search" name="arrivee" placeholder="Arrivée" id="input_arrivee" value="" required>
-                <button class="boutonfav" type="button" style="border: 0; background: transparent" onclick="afficheArriveesFavorites()"> <img src="./img/favori.svg" class="favoris" alt="favori" /> </button> 
-                <select id="select_arrivee" style="visibility:hidden;">
-                    <option></option>
-                    <option id="arrivee1"><?php echo($arretFavori1['stationPreferee']); ?></option>
-                    <option id="arrivee2"><?php echo($arretFavori2['stationPreferee2']); ?></option>
-                </select>
+                <img style="width: 120px" class="favoriArrivee" src="./img/favori.svg"/>
+                <?php if(isset($_SESSION['mail'])){
+                    echo("
+                        <input type='button' value='Arrivées favorites' onclick='afficheArriveesFavorites()'>
+                        <select id='select_arrivee' style='visibility:hidden;'>
+                            <option></option>
+                            <option id='arrivee1'>".$arretFavori1['stationPreferee']."</option>
+                            <option id='arrivee2'>".$arretFavori2['stationPreferee2']."</option>
+                        </select>
+                    ");
+                } ?>
             </div>
 
             <br />                
@@ -48,23 +58,18 @@ include_once "footer.php"
                 function afficheDepartFavoris() {
                     liste_depart = document.getElementById('select_depart');
                     liste_depart.setAttribute("style", "visibility:true");
-                    depart1 = document.getElementById("depart1");
-                    depart2 = document.getElementById("depart2");
-           
-                    liste_depart.addEventListener("click", function () {
+                    liste_depart.addEventListener("change", function () {
                         document.getElementById("input_depart").value = liste_depart.options[liste_depart.selectedIndex].value;
-                        document.getElementById("input_depart")
+                        autocompleteDepart.autocomplete.open();
                     });
                 }
 
                 function afficheArriveesFavorites() {
                     liste_arrivee = document.getElementById('select_arrivee');
                     liste_arrivee.setAttribute("style", "visibility:true");
-                    arrivee1 = document.getElementById("arrivee1");
-                    arrivee2 = document.getElementById("arrivee2");
-                    
-                    liste_arrivee.addEventListener("click", function () {
+                    liste_arrivee.addEventListener("change", function () {
                         document.getElementById("input_arrivee").value = liste_arrivee.options[liste_arrivee.selectedIndex].value;
+                        autocompleteArrivee.autocomplete.open();
                     });
                 }
 </script>    
@@ -117,8 +122,8 @@ include_once "footer.php"
 
     // Connexion à l'API d'Algolia
     const client = algoliasearch(
-            "NGHXUDQIUT",
-            "9b9d3898db2d1af1ac1451e042319b6c"
+            "Q1PH0ERI7K",
+            "eadae444bf8a6deadc762f8140b0f1a2"
             );
     // Voir le dashboard pour modifier des infos
     const index = client.initIndex("mesCoords");
@@ -206,6 +211,7 @@ include_once "footer.php"
                 cssClasses: {prefix: "ac-input"}, // Les classes css 
                 autoselect: true,
                 autoselectOnBlur: true,
+                openOnFocus : true,
                 minLength: 3
             },
             [coordoDataset, placesDataset]
@@ -229,10 +235,10 @@ include_once "footer.php"
     // Comportements selon certains évènements
     autocompleteChangeEvents.forEach(function (eventName) {
         autocompleteDepart.on("autocomplete:" + eventName, function (
-                event,
-                suggestion,
-                datasetName
-                ) {
+            event,
+            suggestion,
+            datasetName
+        ) {
             if (datasetName === "coords") {
                 console.log(suggestion);
                 boolPosD = true;
@@ -288,7 +294,7 @@ include_once "footer.php"
         index.partialUpdateObject(
                 {
                     coords: [latPos, lngPos],
-                    objectID: "1533086121"
+                    objectID: "100637120"
                 },
                 (err, content) => {
             if (err)
