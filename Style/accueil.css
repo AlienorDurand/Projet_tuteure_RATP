@@ -102,7 +102,23 @@ img.favoriArivee{
 #select_depart{
     border: none ; 
     font-family: 'Parisine' ; 
+    width: 30%
 }
+
+#select_arrivee{
+    border: none ; 
+    font-family: 'Parisine' ; 
+    width: 30%
+}
+
+
+.algolia-autocomplete{
+    width: 60% ; 
+    margin-right: -100px ; 
+    padding: 0 ; 
+    position: inherit ; 
+}
+
 
 
 .boutonfav{
@@ -117,7 +133,7 @@ img.favoriArivee{
         margin-left: -1.5% ; 
         margin-top: -3% ; 
         z-index: 5 ; 
-        width : 300px ; 
+        width : 30% ; 
         background-color: #2E296A; 
         border-top-left-radius: 0 ; 
         border-top-right-radius: 0 ; 
@@ -133,8 +149,8 @@ img.favoriArivee{
         float: right ;
         margin-top: -50px ; 
         background-color: red ; 
-}
-    
+}  
+
 
 
 }
@@ -173,15 +189,3 @@ img.favoriArivee{
     
     }
 }
-
-
-
-
-.algolia-autocomplete{
-    width: 200px ; 
-    margin-right: -100px ; 
-    padding: 0 ; 
-    position: inherit ; 
-}
-
-
