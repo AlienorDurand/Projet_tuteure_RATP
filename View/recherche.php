@@ -303,7 +303,7 @@
         derouleDetail = document.getElementById('derouleDetail');
         derouleDetail.insertAdjacentHTML(
             "beforeend",
-            "<button type='button' id='valide' class='btn_perso' onclick='valideTrajet()'> Valider ce trajet ;) ! </button>"
+            "<button type='button' id='valide' class='btn_perso' onclick='valideTrajet()'> Valider ce trajet</button>"
         );
     }
 
