@@ -319,6 +319,7 @@
             },
             function(data, status){
                 alert(data);
-            });
+            }
+              );
     }
 </script>

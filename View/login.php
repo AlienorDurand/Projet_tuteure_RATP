@@ -14,7 +14,7 @@
             
             <input class="entree" type="password" name="password" placeholder="Mot de passe" required value="<?php if (isset($_POST['password'])) echo htmlentities(trim($_POST['mail'])); ?>"><br />
             
-            <input class="boutton2" type="submit" name="connexion" value="Connexion">
+            <input class="boutton2" type="submit" name="connexion" value="Connexion">≠
             
             </form>
             

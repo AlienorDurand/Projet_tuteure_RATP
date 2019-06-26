@@ -13,9 +13,12 @@ include_once "header.php"
                 <input class="recherche2" type="search" name="depart" placeholder="Départ" id="input_depart" value="" required>
                 
                     
-                    <button class="boutonfav" type="button" style="border: 0; background: transparent" id="bouton_depart" onclick="afficheDepartFavoris()"> <img class="favoris" src="./img/favori.svg" alt="favori" /> </button>
+                    
                         <?php if(isset($_SESSION['mail'])){ 
                             echo ("
+                            
+                            <button class='boutonfav' type='button' style='border: 0; background: transparent' id='bouton_depart' onclick='afficheDepartFavoris()'> <img class='favoris' src='./img/favori.svg' alt='favori' /> </button>
+                            
                         <select id='select_depart' style='visibility:hidden;'>
                             <option></option>
                             <option id='depart1'>".$departFavori1['stationPreferee']."</option>

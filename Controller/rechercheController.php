@@ -13,6 +13,7 @@ class rechercheController{
     }
 
     public function envoitBdd(){
+        echo "salut";
         if(isset($_POST['heureDepart']) && isset($_POST['heureArrivee']) && isset($_POST['duree']) && isset($_POST['stationDepart']) && isset($_POST['stationArrivee']) ){
             if(!isset($_SESSION)){
                 echo("Il faut vous connecter");
@@ -30,6 +31,9 @@ class rechercheController{
                 echo('Merci !');
 
             }
+        }
+        else{
+            echo "erreur";
         }
     }
     
