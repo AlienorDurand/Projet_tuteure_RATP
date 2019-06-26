@@ -115,6 +115,7 @@ img.favoriArivee{
 @media only screen and (max-width: 375px) {
     #select_depart, #select_arrivee{
         padding: 0 ; 
+        padding: 0 ; 
         margin-left: -1.5% ; 
         margin-top: -3% ; 
         z-index: 6 ; 
@@ -122,6 +123,8 @@ img.favoriArivee{
         background-color: #2E296A; 
         border-top-left-radius: 0 ; 
         border-top-right-radius: 0 ; 
+        color: white ; 
+        border: 0 ; 
     }
 
 }
