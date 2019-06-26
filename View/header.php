@@ -86,14 +86,14 @@
                         </div> 
 
                         <div class="col-4"> 
-                            <a href="./index.php?ctrl=default&action=defaultPage"><img src="img/LOGO-blanc.png" width="111" height="39"></a>
+                            <a href="./index.php?ctrl=default&action=defaultPage"><img src="img/LOGO-blanc.png" alt="LOGO Navi.GO" width="111" height="39"></a>
                         </div>
 
                         <div class="col-4"> 
                             <?php if(isset($_SESSION['mail'])){?>
-                                <a height="50px" width="50px" href="./index.php?ctrl=membre&action=pageAccueilMembre"><img class="contact" src="img/contact.svg" height="50px" width="50px"></a>
+                                <a height="50px" width="50px" href="./index.php?ctrl=membre&action=pageAccueilMembre"><img class="contact" src="img/contact.svg" alt="image contact" height="50px" width="50px"></a>
                             <?php }else{?>
-                                <a height="50px" width="50px" href="./index.php?ctrl=membre&action=login"><img class="contact" src="img/contact.svg" height="50px" width="50px"></a>
+                                <a height="50px" width="50px" href="./index.php?ctrl=membre&action=login"><img class="contact" src="img/contact.svg" alt="image contact" height="50px" width="50px"></a>
                             <?php } ?>
                             
                         </div>

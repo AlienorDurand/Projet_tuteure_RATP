@@ -42,7 +42,6 @@ include_once "header.php"
                 } ?>
             </div>
 
-
             <br />                
             <input class="boutton3" type="button" name="connexion" value="GO !" onclick='clickButton()'>
         </form>
@@ -102,6 +101,7 @@ include_once "footer.php"
             alert("Votre navigateur ne supporte pas la géolocalisation");
         }
     }
+    
 
     // Met la Map sur la position 
     function succesMap(pos) {
