@@ -10,18 +10,20 @@ include_once "header.php"
         <form action="index.php?ctrl=recherche&action=recherchePage" method="post" name="myform">
 
             <div class="recherche">
-                <input class="recherche2" type="search" name="depart" placeholder="Départ" id="input_depart" value="" required> 
-                <img style="width: 120px" class="favoriDepart" src="./img/favori.svg"/>
-                <?php if(isset($_SESSION['mail'])){ 
-                    echo ("
-                        <input type='button' value='Départs favoris' id='bouton_depart' onclick='afficheDepartFavoris()'>
+                <input class="recherche2" type="search" name="depart" placeholder="Départ" id="input_depart" value="" required>
+                
+                    
+                    <button class="boutonfav" type="button" style="border: 0; background: transparent" id="bouton_depart" onclick="afficheDepartFavoris()"> <img class="favoris" src="./img/favori.svg" alt="favori" /> </button>
+                        <?php if(isset($_SESSION['mail'])){ 
+                            echo ("
                         <select id='select_depart' style='visibility:hidden;'>
                             <option></option>
                             <option id='depart1'>".$departFavori1['stationPreferee']."</option>
                             <option id='depart2'>".$departFavori2['stationPreferee2']."</option>
                         </select>
-                    ");
+                        ");
                 } ?>
+                    
             </div>
 
 
@@ -29,10 +31,10 @@ include_once "header.php"
             <br />
             <div class="recherche"> 
                 <input class="recherche2" type="search" name="arrivee" placeholder="Arrivée" id="input_arrivee" value="" required>
-                <img style="width: 120px" class="favoriArrivee" src="./img/favori.svg"/>
                 <?php if(isset($_SESSION['mail'])){
                     echo("
-                        <input type='button' value='Arrivées favorites' onclick='afficheArriveesFavorites()'>
+                    
+                <button class='boutonfav' type='button' style='border: 0; background: transparent' onclick='afficheArriveesFavorites()'> <img src='./img/favori.svg' class='favoris' alt='favori' /> </button>
                         <select id='select_arrivee' style='visibility:hidden;'>
                             <option></option>
                             <option id='arrivee1'>".$arretFavori1['stationPreferee']."</option>
