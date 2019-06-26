@@ -21,13 +21,13 @@
         <div class="row"> <div class="formmodifinfo"> <span class="col-4" > Téléphone </span> <span class="col-8" > <input type="text" name="telephone" value="<?php echo $_SESSION['telephone'];?>" placeholder="<?php echo ($_SESSION['telephone']); ?>"> </span> </div> </div><br />
         
         <div class="row"> <div class="formmodifinfo"> <span class="col-4" > Ligne préférée </span> <span class="col-8" > <input type="text" name="lignePreferee" value="<?php echo ($_SESSION['lignePreferee']); ?>" placeholder="<?php echo ($_SESSION['lignePreferee']); ?>"> </span> </div> </div><br />
-        <!-- ICI -->
+
         <div class="row"> <div class="formmodifinfo"> <span class="col-4" >Station préférée </span> <span class="col-8 spanStation" > <input id="stationPref1" type="search" name="stationPreferee" value="<?php echo($_SESSION['stationPreferee']); ?>" placeholder="<?php echo($_SESSION['stationPreferee']);?>"> </span> </div> </div><br />
-        <!--  -->
+
         <div class="row"> <div class="formmodifinfo"> <span class="col-4" > Satisfait ? (0 pour non, 1 pour oui) </span> <span class="col-8"  > <input type="text" name="satisfait" value="<?php echo ($_SESSION['satisfait']); ?>" placeholder="<?php echo ($_SESSION['satisfait']);?>"> </span> </div> </div><br />
-        <!-- ICI -->
+
         <div class="row"> <div class="formmodifinfo"> <span class="col-4" > Station préférée 2 </span> <span class="col-8 spanStation"> <input id="stationPref2" type="search" name="stationPreferee2" value="<?php echo ($_SESSION['stationPreferee2']); ?>" placeholder="<?php echo ($_SESSION['stationPreferee2']); ?>"> </span> </div> </div><br />
-        <!--  -->
+
         <input id="bouttonmodif" type="button" name="ajouter" value="Ajouter" onclick="verifClick()">
         
     </form>
