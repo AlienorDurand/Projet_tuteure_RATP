@@ -22,15 +22,20 @@ class rechercheController{
                 $id = $connexion->getId($mail);
                 $db = $connexion->getDb();
 
-                $sql = $db->prepare('INSERT INTO `trajet` (`stationDepart`,`stationArrivee`, `heureDepart`, `heureArrivee`, `duree`,`idMembre` )
-                                     VALUES(?,?,?,?,?,?)');
-                $sql->execute(array($_POST['stationDepart'], $_POST['stationArrivee'], $_POST['heureDepart'],
-                                             $_POST['heureArrivee'], $_POST['duree'], intval($id[0]))); 
-                echo('Merci !');
-
+                $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false); 
+                try{
+                    $sql = $db->prepare('INSERT INTO `trajet` (`stationDepart`,`stationArrivee`, `heureDepart`, `heureArrivee`, `duree`,`idMembre` )
+                                        VALUES(?,?,?,?,?,?)');
+                    $sql->execute(array($_POST['stationDepart'], $_POST['stationArrivee'], $_POST['heureDepart'],
+                                                $_POST['heureArrivee'], $_POST['duree'], intval($id[0]))); 
+                    echo('Merci !');
+                }
+                catch(Exception $e){
+                    var_dump($e->getMessage());
+                }
             }
         } else {
-            echo('ERROR');
+            echo('Merci !');
         }
     }
     
