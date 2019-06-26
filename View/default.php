@@ -172,12 +172,13 @@ include_once "footer.php"
             suggestion: function (suggestion) {
                 let type = "";
                 if (suggestion.type === "trainStation") {
-                    // A modifier par un icône !
-                    type = "<i>TchouTchou ! </i>";
+                    type = "<img width='5%' height='5%' src='./img/subway.png' alt='icone d'un métro'/>";
                 }
                 if (suggestion.type === "city" || suggestion.type === "address") {
-                    // A modifier par un icône !
-                    type = "<i>City !</i>";
+                    type = "<img width='5%' height='5%' src='./img/city.png' alt='icone d'un batiment'/>"
+                }
+                if (suggestion.type === "busStop") {
+                    type = "<img width='5%' height='5%' src='./img/bus.png' alt='icone d'un bus'/>";
                 }
                 return type + " " + suggestion.value;
             }
