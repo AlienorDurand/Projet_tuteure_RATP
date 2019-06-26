@@ -35,7 +35,7 @@ class rechercheController{
                 }
             }
         } else {
-            echo('ERROR');
+            echo('Merci !');
         }
     }
     
