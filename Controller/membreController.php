@@ -16,7 +16,9 @@ class membreController {
                 $membre = new Connexion();
                 $data = $membre->getMembre($_POST['mail'], $_POST['password']);
                 if ($data[0] == 1) {
-                    session_start();
+                    if (session_status() == PHP_SESSION_NONE) {
+                        session_start();
+                    }
                     $_SESSION['mail'] = $_POST['mail'];
                     $nom = $membre->getNom($_SESSION['mail']);
                     $_SESSION['nom'] = $nom['nom'];
