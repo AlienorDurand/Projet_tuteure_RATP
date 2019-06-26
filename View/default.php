@@ -121,7 +121,6 @@ include_once "footer.php"
     }
     ;
 
-
 // SECTION AUTOCOMPLETION
 ///////////////////////////
 
