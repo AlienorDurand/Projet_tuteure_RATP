@@ -44,6 +44,7 @@ include_once "header.php"
                 } ?>
             </div>
 
+
             <br />                
             <input class="boutton3" type="button" name="connexion" value="GO !" onclick='clickButton()'>
         </form>
@@ -103,7 +104,6 @@ include_once "footer.php"
             alert("Votre navigateur ne supporte pas la géolocalisation");
         }
     }
-    
 
     // Met la Map sur la position 
     function succesMap(pos) {
@@ -124,8 +124,8 @@ include_once "footer.php"
 
     // Connexion à l'API d'Algolia
     const client = algoliasearch(
-            "Q1PH0ERI7K",
-            "eadae444bf8a6deadc762f8140b0f1a2"
+            "NGHXUDQIUT",
+            "9b9d3898db2d1af1ac1451e042319b6c"
             );
     // Voir le dashboard pour modifier des infos
     const index = client.initIndex("mesCoords");
@@ -174,12 +174,13 @@ include_once "footer.php"
             suggestion: function (suggestion) {
                 let type = "";
                 if (suggestion.type === "trainStation") {
-                    // A modifier par un icône !
-                    type = "<i>TchouTchou ! </i>";
+                    type = "<img width='5%' height='5%' src='./img/subway.png' alt='icone d'un métro'/>";
                 }
                 if (suggestion.type === "city" || suggestion.type === "address") {
-                    // A modifier par un icône !
-                    type = "<i>City !</i>";
+                    type = "<img width='5%' height='5%' src='./img/city.png' alt='icone d'un batiment'/>"
+                }
+                if (suggestion.type === "busStop") {
+                    type = "<img width='5%' height='5%' src='./img/bus.png' alt='icone d'un bus'/>";
                 }
                 return type + " " + suggestion.value;
             }
@@ -296,7 +297,7 @@ include_once "footer.php"
         index.partialUpdateObject(
                 {
                     coords: [latPos, lngPos],
-                    objectID: "100637120"
+                    objectID: "1533086121"
                 },
                 (err, content) => {
             if (err)
